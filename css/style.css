@@ -25,3 +25,30 @@
     color:white;
 
 }
+
+#navBarRun:hover {
+    background-image: url(../../ProjectA/img/joel-jasmin-forestbird-znoL1m6MD_k-unsplash.jpg) !important;
+    transition: all 10s linear 0s;
+}
+
+#main-slice{
+
+    background-image: url(../img/tobias-mrzyk-iuqmGmst5Po-unsplash.jpg) !important; 
+    background-size: cover !important;
+    background-position: top;
+    margin:0px ;
+    padding:0px;
+
+}
+
+.main-slice-margin{
+
+    width: 100%;
+
+}
+
+.main-slice-margin-container{
+
+    width: 100%;
+    
+}
