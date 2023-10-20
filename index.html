@@ -41,7 +41,7 @@
     <nav id="navBarRun" class="navbar navbar-expand-lg navbar-adjust" style="width:100%; background: var(--secondary-color);">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-            <img class="img-size" src="./img/River Flow.jpeg" alt="Brand">
+            <img class="img-size" src="./img/登山logo.webp" alt="Brand">
             <span class="ms-3">
                 <strong>登 山  &nbsp; &nbsp; &nbsp;  趣</strong>
             </span>
@@ -69,6 +69,15 @@
                             登山須知
                         </a>
                     </li>
+                    <!-- 會員登入系統 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">會員系統</a>
+                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                            <li><a class="dropdown-item" href="">會員登入</a></li>
+                            <li><a class="dropdown-item" href="">會員等級</a></li>
+                            <li><a class="dropdown-item" href="">訂單查詢</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item ms-3">
                         <a class="nav-link custom-btn custom-border-btn custom-btn-white btn" href="#toBalance">開始</a>
                     </li>
@@ -81,28 +90,28 @@
 
     <main>
         <section>
-            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-wrap= "true">
                 <div class="carousel-indicators">
                   <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                   <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
                   <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
                 <div class="carousel-inner">
-                  <div class="carousel-item active">
+                  <div class="carousel-item active" data-bs-interval="3000">
                     <img src="./img/irina-iriser-2Y4dE8sdhlc-unsplash.jpg" class="d-block w-100 img-height-adjust" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                       <h5 class="label-white">玉山國家公園</h5>
                       <p class="label-white">Some representative placeholder content for the first slide.</p>
                     </div>
                   </div>
-                  <div class="carousel-item">
+                  <div class="carousel-item" data-bs-interval="3000">
                     <img src="./img/marita-kavelashvili-ugnrXk1129g-unsplash.jpg" class="d-block w-100 img-height-adjust" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                       <h5 class="label-white">雪霸國家公園</h5>
                       <p class="label-white">Some representative placeholder content for the second slide.</p>
                     </div>
                   </div>
-                  <div class="carousel-item">
+                  <div class="carousel-item" data-bs-interval="3000">
                     <img src="./img/sergei-a--heLWtuAN3c-unsplash.jpg" class="d-block w-100 img-height-adjust" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                       <h5 class="label-white">太魯閣國家公園</h5>
@@ -168,7 +177,7 @@
                     <div class="col-lg-6 col-12">
                         <h2 class="mb-4">尋找  屬於自己的 <br> 登山行程</h2>
 
-                        <p><a href="#">引言</a>台灣的山還有很特殊的地形特色－斷崖、崩壁和陡峭滿是尖角或刀刃狀碎石的深凹大小蝕谷特別多，且搭配周遭的高山草原和森林景緻，非常有對比性。 國外的極高山如阿爾卑斯山，更高的天山山區、帕米爾高原等，都是冰河作用下的地形。 這種景緻能與台灣媲美的，只有位居赤道的新幾內亞島上高山。<a rel="nofollow" href="https://www.freepik.com/" target="_blank">FreePik</a> and <a rel="nofollow" href="https://worldvectorlogo.com/" target="_blank">WorldVectorLogo</a> websites.</p>
+                        <p><a href="#">引言</a>台灣的山還有很特殊的地形特色－斷崖、崩壁和陡峭滿是尖角或刀刃狀碎石的深凹大小蝕谷特別多，且搭配周遭的高山草原和森林景緻，非常有對比性。 國外的極高山如阿爾卑斯山，更高的天山山區、帕米爾高原等，都是冰河作用下的地形。 這種景緻能與台灣媲美的，只有位居赤道的新幾內亞島上高山。</p>
                         <p> <strong></strong>面對生活的困境，您可以來這邊尋找適合自己的登山行程</p>
                     </div>
 
@@ -180,15 +189,195 @@
             </div>
         </section>
 
-        <section class="service-section section-padding section-bg" id="services-section">
+        <section class="testimonial-section section-padding section-bg pb-0">
+            <div class="section-overlay"></div>
+
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12 col-12">
-                        <h2 class="mb-4">商品選擇</h2>
+                    <div class="col-lg-12 col-12 text-center">
+                        <h2 class="text-white">顧 客 評 論</h2>
                     </div>
+                    <div class="col-lg-4 col-12">
+                        <div class="featured-block">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="./img/hiker/Premium Vector _ Mountain hiker flat.jpeg" alt="#" class="avatar-image img-fluid">
+                    
+                                <div class="ms-3">
+                                    <h4 class="mb-0">Krist</h4>
+
+                                    <p class="mt-0">評分</p>
+                                    <div class="reviews-icon mt-1 d-flex">
+
+                                        <i class="bi-tree-fill"></i>
+                                        <i class="bi-tree-fill"></i>
+                                        <i class="bi-tree-fill"></i>
+                                        <i class="bi-tree-fill"></i>
+                                        <i class="bi-tree"></i>
+
+                                    </div>
+
+                                </div>
+                        
+                            </div>
+                            <p class="mb-0">非常推薦 皮卡丘 的行程，總是很細心的帶領我們。</p>
+                        </div>
+                    </div>
+
+                    <!-- 第二位顧客 -->
+                    <div class="col-lg-4 col-12">
+                        <div class="featured-block">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="./img/hiker/Premium Vector _ Mountain hiker flat.jpeg" alt="#" class="avatar-image img-fluid">
+                    
+                                <div class="ms-3">
+                                    <h4 class="mb-0">Krist</h4>
+
+                                    <p class="mt-0">評分</p>
+                                    <div class="reviews-icon mt-1 d-flex">
+
+                                        <i class="bi-tree-fill"></i>
+                                        <i class="bi-tree-fill"></i>
+                                        <i class="bi-tree-fill"></i>
+                                        <i class="bi-tree-fill"></i>
+                                        <i class="bi-tree"></i>
+
+                                    </div>
+
+                                </div>
+                        
+                            </div>
+                            <p class="mb-0">非常推薦 皮卡丘 的行程，總是很細心的帶領我們。</p>
+                        </div>
+                    </div>
+
+                    <!-- 第三位顧客 -->
+
+                    <div class="col-lg-4 col-12">
+                        <div class="featured-block">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="./img/hiker/Premium Vector _ Mountain hiker flat.jpeg" alt="#" class="avatar-image img-fluid">
+                                <div class="ms-3">
+                                    <h4 class="mb-0">Krist</h4>
+
+                                    <p class="mt-0">評分</p>
+                                    <div class="reviews-icon mt-1 d-flex">
+
+                                        <i class="bi-tree-fill"></i>
+                                        <i class="bi-tree-fill"></i>
+                                        <i class="bi-tree-fill"></i>
+                                        <i class="bi-tree-fill"></i>
+                                        <i class="bi-tree"></i>
+
+                                    </div>
+
+                                </div>
+                        
+                            </div>
+                            <p class="mb-0">非常推薦 皮卡丘 的行程，總是很細心的帶領我們。</p>
+                        </div>
+                    </div>
+
+                    
                 </div>
             </div>
+        
         </section>
+
+        <!-- 第四位顧客 -->
+        <section class="testimonial-section section-padding section-bg pt-1">
+            <div class="section-overlay"></div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-12">
+                        <div class="featured-block">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="./img/hiker/Premium Vector _ Mountain hiker flat.jpeg" alt="#" class="avatar-image img-fluid">
+                    
+                                <div class="ms-3">
+                                    <h4 class="mb-0">Krist</h4>
+
+                                    <p class="mt-0">評分</p>
+                                    <div class="reviews-icon mt-1 d-flex">
+
+                                        <i class="bi-tree-fill"></i>
+                                        <i class="bi-tree-fill"></i>
+                                        <i class="bi-tree-fill"></i>
+                                        <i class="bi-tree-fill"></i>
+                                        <i class="bi-tree"></i>
+
+                                    </div>
+
+                                </div>
+                        
+                            </div>
+                            <p class="mb-0">非常推薦 皮卡丘 的行程，總是很細心的帶領我們。</p>
+                        </div>
+                    </div>
+
+                    <!-- 第二位顧客 -->
+                    <div class="col-lg-4 col-12">
+                        <div class="featured-block">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="./img/hiker/Premium Vector _ Mountain hiker flat.jpeg" alt="#" class="avatar-image img-fluid">
+                    
+                                <div class="ms-3">
+                                    <h4 class="mb-0">Krist</h4>
+
+                                    <p class="mt-0">評分</p>
+                                    <div class="reviews-icon mt-1 d-flex">
+
+                                        <i class="bi-tree-fill"></i>
+                                        <i class="bi-tree-fill"></i>
+                                        <i class="bi-tree-fill"></i>
+                                        <i class="bi-tree-fill"></i>
+                                        <i class="bi-tree"></i>
+
+                                    </div>
+
+                                </div>
+                        
+                            </div>
+                            <p class="mb-0">非常推薦 皮卡丘 的行程，總是很細心的帶領我們。</p>
+                        </div>
+                    </div>
+
+                    <!-- 第三位顧客 -->
+
+                    <div class="col-lg-4 col-12">
+                        <div class="featured-block">
+                            <div class="d-flex align-items-center mb-3">
+                                <img src="./img/hiker/Premium Vector _ Mountain hiker flat.jpeg" alt="#" class="avatar-image img-fluid">
+                                <div class="ms-3">
+                                    <h4 class="mb-0">Krist</h4>
+
+                                    <p class="mt-0">評分</p>
+                                    <div class="reviews-icon mt-1 d-flex">
+
+                                        <i class="bi-tree-fill"></i>
+                                        <i class="bi-tree-fill"></i>
+                                        <i class="bi-tree-fill"></i>
+                                        <i class="bi-tree-fill"></i>
+                                        <i class="bi-tree"></i>
+
+                                    </div>
+
+                                </div>
+                        
+                            </div>
+                            <p class="mb-0">非常推薦 皮卡丘 的行程，總是很細心的帶領我們。</p>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        
+        </section>
+        
+        
+        
+        
 
 
     </main>
