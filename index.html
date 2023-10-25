@@ -12,6 +12,7 @@
     <link href="css/bootstrap-icons.css" rel="stylesheet">
     <link href="css/tooplate-clean-work.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./js/navbar.js">
 </head>
 <body>
     
@@ -198,7 +199,7 @@
                         <h2 class="text-white">顧 客 評 論</h2>
                     </div>
                     <div class="col-lg-4 col-12">
-                        <div class="featured-block h-100">
+                        <div class="featured-block h-100 client-feedback">
                             <div class="d-flex align-items-center mb-3">
                                 <img src="./img/hiker/評論者_1.jpeg" alt="#" class="avatar-image img-fluid">
                     
@@ -225,7 +226,7 @@
 
                     <!-- 第二位顧客 -->
                     <div class="col-lg-4 col-12">
-                        <div class="featured-block h-100">
+                        <div class="featured-block h-100 client-feedback">
                             <div class="d-flex align-items-center mb-3">
                                 <img src="./img/hiker/評論者_2.jpeg" alt="#" class="avatar-image img-fluid">
                     
@@ -253,7 +254,7 @@
                     <!-- 第三位顧客 -->
 
                     <div class="col-lg-4 col-12">
-                        <div class="featured-block h-100">
+                        <div class="featured-block h-100 client-feedback">
                             <div class="d-flex align-items-center mb-3">
                                 <img src="./img/hiker/評論者_3.jpeg" alt="#" class="avatar-image img-fluid">
                                 <div class="ms-3">
@@ -290,7 +291,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 col-12">
-                        <div class="featured-block h-100">
+                        <div class="featured-block h-100 client-feedback">
                             <div class="d-flex align-items-center mb-3">
                                 <img src="./img/hiker/評論者_4.jpeg" alt="#" class="avatar-image img-fluid">
                     
@@ -317,7 +318,7 @@
 
                     <!-- 第二位顧客 -->
                     <div class="col-lg-4 col-12">
-                        <div class="featured-block h-100">
+                        <div class="featured-block h-100 client-feedback">
                             <div class="d-flex align-items-center mb-3">
                                 <img src="./img/hiker/評論者_5.jpeg" alt="#" class="avatar-image img-fluid">
                     
@@ -347,7 +348,7 @@
                     <!-- 第三位顧客 -->
 
                     <div class="col-lg-4 col-12">
-                        <div class="featured-block h-100">
+                        <div class="featured-block h-100 client-feedback">
                             <div class="d-flex align-items-center mb-3">
                                 <img src="./img/hiker/評論者_6.jpeg" alt="#" class="avatar-image img-fluid">
                                 <div class="ms-3">
@@ -394,5 +395,39 @@
             <script src="js/modernizr.js"></script>
             <script src="js/animated-headline.js"></script>
             <script src="js/custom.js"></script>
+
+            <script>
+                // var clientBack = document.getElementsByClassName("client-feedback");
+                // clientBack.removeAttribute("class");
+
+                // function myFunction() {
+                //     document.getElementById("#client-feedback").style.backgroundColor = "blue";
+                // }
+
+                // document.getElementById("#clientFeedback").addEventListener("mousmove", myFunction);
+
+                // $(document).ready( function() {
+
+                //     addEventListener
+                //     $("#client-feedback").addClass("border");
+
+                // })
+
+                $(function() {
+                    $(".client-feedback").mouseleave(function () {
+                        $(this).removeClass("border");
+                        $(this).removeClass("border-3");
+                    })
+
+                    $(".client-feedback").mouseenter(function () {
+                        $(this).addClass("border");  
+                        $(this).addClass("border-3"); 
+
+                    })
+                }) 
+
+
+                
+            </script>
 </body>
 </html>
