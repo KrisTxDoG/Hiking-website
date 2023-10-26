@@ -15,6 +15,10 @@
     <link href="css/tooplate-clean-work.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./js/navbar.js">
+    <!-- chart.js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
     <title>goodPage</title>
     <title>側邊動畫效果</title>
 </head>
@@ -108,8 +112,71 @@
                 </div>
         </nav>
     </div>
-    <h1>網頁內容</h1>
+    <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+    <div>
+        <div class="container">
+            <div class="page-header">
+                <h1 class="m-0">財務報表</h1>
+            </div>    
+            <div class="row">
+                <div class="col-sm-6">
+                    <!-- 統計圖畫在這裡 -->
+                    <canvas id="chartCanvas"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
     <section>
     </section>
+
+    <script>
+        $(document).ready(function () {
+
+        var dataList = [];
+        var labelList = [];
+        for (let i = 0; i <= 12; i++) {
+            let dataItem = Math.floor(Math.random() * 10000);
+            labelList.push(i);
+            dataList.push(dataItem);
+        }
+
+        var series2DataList = [];
+        for (let i = 0; i <= 12; i++) {
+            let dataItem = Math.floor(Math.random() * 10000);
+            series2DataList.push(dataItem);
+        }
+
+        // Lab 練習的程式寫在這裡
+        var ctx = document.getElementById("chartCanvas");
+        var labChart = new Chart(ctx,{
+            type: "line",
+            data: {
+                labels: labelList,
+                datasets: [
+                    {
+                        label: "去年銷售額",
+                        data: dataList,
+                        fill: false,
+                        // 著色:
+                        backgroundColor: "#12486B",
+                        borderColor: "#12486B",
+                        borderWidth: 1
+                    },
+                    {
+                        label: "今年銷售額",
+                        data: series2DataList,
+                        fill: false,
+                        // 著色:
+                        backgroundColor: "#419197",
+                        borderColor: "#419197",
+                        borderWidth: 1
+                    }
+                ]
+                }
+            })
+        })
+
+        
+    </script>
 </body>
 </html>
