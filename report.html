@@ -123,6 +123,13 @@
                     <!-- 統計圖畫在這裡 -->
                     <canvas id="chartCanvas"></canvas>
                 </div>
+
+                <br>
+
+                <div class="col-sm-6">
+                    <!-- 統計圖畫在這裡 -->
+                    <canvas id="chartCanvas_circle"></canvas>
+                </div>
             </div>
         </div>
     </div>
@@ -134,17 +141,48 @@
 
         var dataList = [];
         var labelList = [];
-        for (let i = 0; i <= 12; i++) {
-            let dataItem = Math.floor(Math.random() * 10000);
-            labelList.push(i);
-            dataList.push(dataItem);
-        }
+        // for (let i = 0; i <= 12; i++) {
+        //     let dataItem = Math.floor(Math.random() * 10000);
+        //     labelList.push(i);
+        //     dataList.push(dataItem);
+        // }
+        labelList = [1,2,3,4,5,6,7,8,9,10,11,12];
 
-        var series2DataList = [];
-        for (let i = 0; i <= 12; i++) {
-            let dataItem = Math.floor(Math.random() * 10000);
-            series2DataList.push(dataItem);
-        }
+        dataList = [5400, 6400, 6100, 5500, 7500, 8900, 10200, 12000, 9600, 10000, 7200, 4000];
+        dataList_1 = [5400, 6400, 6100, 5500, 7500, 8900, 10200, 12000, 9600, 10000, 7200, 4000];
+
+        
+
+        dataList.forEach(function(item, index, arr){
+            arr[index] = item * 10;
+        });
+
+        dataList_1.forEach(function(item, index, arr){
+            arr[index] = item * 8;
+        })
+
+        console.log(dataList);
+        console.log(dataList_1);
+        
+
+
+        // alert(dataList);
+
+        // var series2DataList = [];
+        // for (let i = 1; i <= 12; i++) {
+        //     let dataItem = Math.floor(Math.random() * 10000);
+        //     series2DataList.push(dataItem);
+        // }
+
+        // for (i=0; i<=dataList.length; i++) {
+        //     var series2DataList = [];
+        //     series2DataList =  series2DataList.append(dataList[i]);
+        // }
+
+        // var series2DataList = [];
+        // series2DataList = dataList * 0.8;
+
+        // console.log(series2DataList);
 
         // Lab 練習的程式寫在這裡
         var ctx = document.getElementById("chartCanvas");
@@ -164,7 +202,7 @@
                     },
                     {
                         label: "今年銷售額",
-                        data: series2DataList,
+                        data: dataList_1,
                         fill: false,
                         // 著色:
                         backgroundColor: "#419197",
@@ -175,6 +213,35 @@
                 }
             })
         })
+
+        // 圓餅圖
+        $(document).ready(function () {
+
+        var cityPopulationList = [ 3800, 2570, 2374, 2106, 1859];
+        var cityNameList = [ "Tokyo", "Delhi", "Shanghai", "Sao Paulo", "New York"];
+
+        // Lab 練習的程式寫在這裡
+
+        var ctx = document.getElementById("chartCanvas_circle");
+        var pieChart = new Chart(ctx, {
+            type: "pie",
+            data: {
+                labels: cityNameList,
+                datasets: [
+                    {
+                        data: cityPopulationList,
+                        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"]
+                    }
+                ]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Population'
+                }
+            }
+        })
+})
 
         
     </script>
