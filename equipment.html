@@ -20,7 +20,7 @@
     <nav id="navBarRun" class="navbar navbar-expand-lg navbar-adjust" style="width:100%; background: var(--secondary-color); top:0px !important;">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-            <img class="img-size" src="./img/登山logo.webp" alt="Brand">
+            <img class="img-size" data-src="./img/登山logo.webp" src="./img/登山logo.webp" alt="Brand">
             <span class="ms-3">
                 <strong>登 山  &nbsp; &nbsp; &nbsp;  趣</strong>
             </span>
@@ -70,9 +70,8 @@
 </section>
 
 <section class="intro-section" id="intro-section">
-    <div class="container ">
+    <div class="container">
         <div class="row justify-content-lg-center align-items-center mt-5">
-
             <div class="col-lg-6 col-12">
                 <h2 class="mb-4" style="color: #61677A">服飾類</h2>
                 <h2 class="mb-4" style="color: var(--primary-color)"> 防風防水外套</h2>
@@ -81,20 +80,19 @@
                 <p> <strong></strong>面對生活的困境，您可以來這邊尋找適合自己的登山行程</p>
             </div>
 
-            <div class="col-lg-6 col-12 custom-block-wrap mt-5">
-                <img src="./img/equipment/圖片 1.png" class="img-fluid lazyIn">
+            <div class="col-lg-6 col-12 custom-block-wrap p-5" style="padding: 100px">
+                <img src="./img/equipment/聖母峰.png"  data-src="./img/equipment/圖片 1.png" class="img-fluid" alt="Clothes">
             </div>
 
         </div>
     </div>
 </section>
 
-<section class="intro-section" id="intro-section">
-    <div class="container ">
-        <div class="row justify-content-lg-center align-items-center mt-5">
-
-            <div class="col-lg-6 col-12 custom-block-wrap mt-5">
-                <img src="./img/equipment/登山褲子.png" class="img-fluid">
+<section class="intro-section" >
+    <div class="container">
+        <div class="row justify-content-lg-center align-items-center">
+            <div class="col-lg-6 col-12">
+                <img src="./img/equipment/聖母峰.png" data-src="./img/equipment/登山褲子.png" class="img-fluid" alt="Jeans" style="width: 100px height:100px">
             </div>
 
             <div class="col-lg-6 col-12">
@@ -125,7 +123,7 @@
             <h1 class="text-center" style="color: #61677A">配件類</h1>
             <p></p>
             <div calss="ms-5">
-                <img class="lazy-img" style="margin-left: 10rem !important" data-src="./img/equipment/登山杖.png" alt="">
+                <img class="" style="margin-left: 10rem !important" src="./img/equipment/聖母峰.png" data-src="./img/equipment/登山杖.png" alt="">
             </div>
             <div>
                 <p class="mt-5">根據《運動醫學期刊》（Journal of Sports Sciences）在 1999 年的研究指出，登山杖可降低 25% 對膝蓋的壓力。作用機制為當下坡時，因為手撐著登山杖作為支撐，人們上半身會容易前傾，改變下坡時施力的動作，進而減少了膝關節的力矩臂，減緩對膝蓋的壓力。此外，登山杖亦可加強垂直移動時的平衡支撐，在爬坡時替肌肉省點力。</p>
@@ -154,6 +152,9 @@
         </div>
     </div>
 </footer>
+<p>Resize the browser window to fire the <code>resize</code> event.</p>
+<p>Window height: <span id="height"></span></p>
+<p>Window width: <span id="width"></span></p>
 
 <script>
     // // 檢查是否圖像在視窗內
@@ -195,13 +196,111 @@
         var dom = document.querySelector("lazyIn");
         var windowSize = dom.getBoundingClientRect();
 
-        console.log(windowSize);
+        // console.log(windowSize);
     }
 
-    var dom = document.querySelector(".lazyIn");
-    var windowSize = dom.getBoundingClientRect();
+    function update(){
 
-    console.log(windowSize);
+        var dom = document.querySelector(".lazyIn");
+        var windowSize = dom.getBoundingClientRect();
+
+        for (var key in windowSize) {
+
+            if(typeof windowSize[key] != "function") {
+
+                let para = document.createElement("p");
+                para.textContent = `${key} : ${windowSize[key]}`;
+
+                // console.log(para);
+
+            }
+
+        }
+
+    }
+
+    var num = document.getElementsByTagName("img").length;
+    var img = document.getElementsByTagName("img");
+    var n = 0;
+    
+    // console.log(num);
+
+    lazyload();
+
+    function lazyload() {
+        var seeHeight = document.documentElement.clientHeight;
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+        console.log(img[2].offsetTop);
+        console.log(seeHeight);
+        console.log(scrollTop);
+
+        for(var i = n; i < num; i++) {
+
+            if(img[i].offsetTop <= scrollTop) {
+
+                if(img[i].getAttribute("src") == "./img/equipment/聖母峰.png") {
+
+                    img[i].src = img[i].getAttribute("data-src");
+
+                    console.log("success");
+
+                    
+                }else {
+
+                    console.log("fail");
+
+                }
+                n += 1;
+
+            }
+
+        }
+
+    }
+
+    function throttle(fun, delay, time) {
+        var timeout, 
+            startTime = new Date();
+        return function() {
+            var context = this,
+                args = arguments,
+                curTime = new Date();
+        
+        clearTimeout(timeout);
+        if(curTime - startTime >= time) {
+                fun.apply(context, args);
+                startTime = curTime;
+            }else {
+                timeout = setTimeout(function(){
+
+                    fun.apply(context, args);
+
+                }, delay)
+            }
+        };
+    };
+    window.addEventListener("scroll", throttle(lazyload, 100, 500));
+
+
+
+
+    // document.documentElement.clientHeight
+    // window.innerHeight;
+
+    // document.addEventListener("scroll", update);
+
+    // update();
+
+    
+    // window.addEventListener ("scroll", () => {
+
+        
+
+    // })
+
+    // updateSize();
+    // window.addEventListener("resize", updateSize);
 
     // const el = document.querySelector('lazy-img');
     // const observer = lozad(el); // passing a `NodeList` (e.g. `document.querySelectorAll()`) is also valid
