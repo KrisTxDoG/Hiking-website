@@ -82,7 +82,7 @@
             </div>
 
             <div class="col-lg-6 col-12 custom-block-wrap mt-5">
-                <img src="./img/equipment/圖片 1.png" class="img-fluid">
+                <img src="./img/equipment/圖片 1.png" class="img-fluid lazyIn">
             </div>
 
         </div>
@@ -189,9 +189,23 @@
     // // 監聽滾動事件
     // window.addEventListener('scroll', loadImages);
 
-    const el = document.querySelector('lazy-img');
-    const observer = lozad(el); // passing a `NodeList` (e.g. `document.querySelectorAll()`) is also valid
-    observer.observe();
+
+    // 物件下拉動畫
+    function isEventInWindow(){
+        var dom = document.querySelector("lazyIn");
+        var windowSize = dom.getBoundingClientRect();
+
+        console.log(windowSize);
+    }
+
+    var dom = document.querySelector(".lazyIn");
+    var windowSize = dom.getBoundingClientRect();
+
+    console.log(windowSize);
+
+    // const el = document.querySelector('lazy-img');
+    // const observer = lozad(el); // passing a `NodeList` (e.g. `document.querySelectorAll()`) is also valid
+    // observer.observe();
 </script>
 </body>
 </html>
