@@ -69,7 +69,134 @@
     </div>
     </nav>
 
-    <br><br><br><br><br><br><br>
+    <br><br><br><br><br>
+
+    <div class="container">
+        <div class="m-5">
+            <form action="">
+
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">山岳名稱</th>
+                        <th scope="col">售價</th>
+                        <th scope="col">日期</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>北大武</td>
+                        <td>6000</td>
+                        <td>2022-02-30</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>玉山主峰</td>
+                        <td>4000</td>
+                        <td>2022-02-30</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td >奇萊南華</td>
+                        <td>4500</td>
+                        <td>2022-02-30</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">4</th>
+                        <td>大霸尖山</td>
+                        <td>5000</td>
+                        <td>2022-02-30</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">5</th>
+                        <td>雪山主峰</td>
+                        <td>7500</td>
+                        <td>2022-02-30</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">6</th>
+                        <td>嘉明湖</td>
+                        <td>8000</td>
+                        <td>2022-02-30</td>
+                      </tr>
+            
+                      
+                    </tbody>
+                  </table>
+
+            </form>
+
+            <hr>
+
+
+            
+        </div>
+    </div>
+    
+    <!-- 提交表單 -->
+    <section>
+        <div class="m-5">
+            <form>
+                <fieldset>
+                  <legend>表單提交</legend>
+
+                    <label for="" class="form-label">姓名</label>
+                    <input type="text" id="inputPassword5" class="form-control" aria-describedby="">
+                    <div id="name" class="form-text">
+                    Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+                    </div>
+
+
+                     <div class="mb-3">
+                    <label for="Moun_name" class="form-label">行程選擇</label>
+                    <select class="form-select" name="" id="Moun_name">
+                        <option>北大武山</option>
+                        <option>玉山主峰</option>
+                        <option>雪山主峰</option>
+                        <option>嘉明湖</option>
+                        <option>奇萊南華</option>
+                        <option>大霸尖山</option>
+                    </select>
+        
+                  </div>
+                  <div class="mb-3">
+                    <label for="Moun_num" class="form-label">數量</label>
+                    <select id="Moun_num" class="form-select">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                    </select>
+
+                  </div>
+
+                  <label for="">是否訂餐</label>
+                  <div class="mb-3">
+                    <div class="form-check">
+                
+                        <input class="form-check-input" type="radio" id="disabledFieldsetCheck" value="option1" name="exampleRadios">
+                        <label class="form-check-label" for="disabledFieldsetCheck">
+                        是
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" id="Hello" value="option2" name="exampleRadios">
+                        <label class="form-check-label" for="Hello">
+                        否
+                        </label>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </fieldset>
+              </form>
+        </div>
+    </section>
+
+
 
     <!-- 範例 -->
     <!-- <div class="container">
@@ -97,10 +224,9 @@
     
     </div>  -->
 
-    <!-- <br><br><br><br><br><br><br> -->
 
     <!-- 樣式板模 -->
-    <!-- <section class="intro-section">
+    <section class="intro-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
@@ -131,7 +257,7 @@
                                 </td>
     
                                 <td >
-                                    <p class="text-center">北大武山</p>
+                                    <p class="text-center" id="mountain_name"></p>
                                 </td>
     
                                 <td >
@@ -161,9 +287,6 @@
 
                     </form>
 
-                    <div >
-                        <img class="img-fluid" src="../img/leader/領隊_1.avif" alt="">
-                    </div>
 
                 </div>
                 <div class="col-lg-6 ">
@@ -224,7 +347,7 @@
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
 
     <section id="mountain_SQL" class="intro-section">
         
@@ -248,9 +371,14 @@
                 mountain_MySQL = JSON.parse(e);
                 refreshNewUI();
 
-                })
+                console.log(e);
+                console.log(mountain_MySQL[0].journey_name);
+         
+
+            })
 
                 
+
 
                 function refreshNewUI() {
                     $("#latestNews").empty();
@@ -272,141 +400,35 @@
                         // $li.append('<span class="pull-right"><button class="btn btn-info btn-xs editItem"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>&nbsp;<button class="btn btn-danger btn-xs deleteItem"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></span>');
                         // $li.appendTo("#latestNews");
 
-                        var $tb = $(`<div class="container">
-                        <div class="row">
-                            <div class="col-lg-6">
 
-                                <form action="">
+                        var $tb = $(`<p class="text-center"> ${mountain_list} </p>`)
 
-                                    <table class="table table-striped">
-                                        <thead>
-                                        <tr>
-                                            <th scope="col"><p class="text-center">編號</p></th>
-                                            <th scope="col"><p class="text-center">領隊</p></th>
-                                            <th scope="col"><p class="text-center">商品</p></th>
-                                            <th scope="col"><p class="text-center">價格</p></th>
-                                            <th scope="col"><p class="text-center">數量</p></th>
-                                            <th scope="col"><p class="text-center">總計</p></th>
-                                        </tr>
-                                        </thead>
-                
-                                        <tbody>
-                                        <tr>
-                                            <th scope="col">1</th>
-                
-                                            <td >
-                                                <div >
-                                    
-                                                </div>
-                                        
-                                            </td>
-                
-                                            <td >
-                                                <p class="text-center">${mountain_list}</p>
-                                            </td>
-                
-                                            <td >
-                                                <p class="text-center">6000/人</p>
-                                            </td>
-                
-                                            <td >
-                                                <form action="#">
-                                                    <label for="lang"></label>
-                                                    <select name="languages" id="HELLO">
-                                                        <option value="">1</option>
-                                                        <option value="">2</option>
-                                                        <option value="">3</option>
-                                                        <option value="">4</option>
-                                                        <option value="">5</option>
-                                                        <option value="">6</option>
-                                                    </select>
-                                                </form>
-                                            </td>
-                
-                                            <td ><p class="text-center" id="total_money">6000</p></td>
-                            
-                                        </tr>
-                
-                                        </tbody>
-                                    </table>
-
-                                </form>
-
-                                <div >
-                                    <img class="img-fluid" src="../img/leader/領隊_1.avif" alt="">
-                                </div>
-
-                            </div>
-                            <div class="col-lg-6 ">
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th><p class="text-center">購物車總計</p></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td><p class="text-start">小記</p></td>
-                                        </tr>
-                                        <tr>
-                                            <td><p class="text-start">總計 : ${total}</p></td>
-                                        </tr>
-                
-                                        
-                                    </tbody>
-                                </table>
-                                <button class="btn btn-primary w-100">前往結賬</button>
-
-                                <br><br>
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th><p class="text-start">折價卷</p></th>
-                                        </tr>
-                                    </thead>
-                                
-                                    <tbody>                         
-                                    </tbody>
-                                </table>
-
-                                <section></section>
-
-                                <div class="w-100">
-                                    <input type="text" style="width: 100%" placeholder="   請 輸 入 折 價 卷">
-                                </div>
-                            
-                                
-
-                                <table class="table table-striped">
-                                    <thead>
-                                        <tr>
-                                            
-                                        </tr>
-                                    </thead>
-
-                                    <br>
-                                
-                                    <tbody>
-                                        <button class="btn btn-danger w-100">使用折價卷</button>
-                                    </tbody>
-                                </table>
-
-
-                            </div>
-                        </div>
-                    </div>`)
-
-                        $tb.appendTo("#mountain_SQL")
+                        $tb.appendTo("#mountain_name")
 
                     })
-
-                    // 外層可以寫在此地區
-                    console.log($tb);
                 
 
-            }})
+                }
+        })
+        
+    
+    </script>
+    
+        
+    <script>
 
+        // $("#buy_1").click(function() {
 
+        //     var mountain_name = $("#BIGMOUNTAIN").val();
+        //     var $ta = $(`<p class="text-center"> ${mountain_name} </p>`)
+        //     $ta.appendTo("#mountain_name");
+
+        //     console.log();
+
+        // })
+
+        // var mountain_name = $("#BIGMOUNTAIN").text();
+        // console.log(typeof(mountain_name));
 
     </script>
 
