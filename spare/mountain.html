@@ -108,7 +108,7 @@
                             <td >
                                 <form action="#">
                                     <label for="lang"></label>
-                                    <select name="languages" id="">
+                                    <select name="languages" id="HELLO">
                                         <option value="">1</option>
                                         <option value="">2</option>
                                         <option value="">3</option>
@@ -192,6 +192,38 @@
     </section>
 
 
-    
+    <script>
+        $(function() {
+
+            var mountain = 
+            [
+                {journey_name: "北大武山三天兩夜", journey_leader_name:"Krist", journey_leader_phone: "0975870720", journey_leader_phone : "2023-05-21", journey_end_data : "2023-05-23", journey_num : 1},
+                {journey_name: "北大武山三天兩夜", journey_leader_name:"Krist", journey_leader_phone: "0975870720", journey_leader_phone : "2023-05-21", journey_end_data : "2023-05-23", journey_num : 1}
+
+            ];
+
+
+
+            $.get("/home/journey", function(e) {
+
+                mountain = JSON.parse(e);
+                refreshNewUI();
+
+                })
+
+                function refreshNewUI() {
+                $("#HELLO").empty();
+
+
+                }
+
+
+
+        })
+
+
+
+    </script>
+
 </body>
 </html>
