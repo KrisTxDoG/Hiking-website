@@ -72,10 +72,16 @@ app.post("/home/journey", function(request, response){
 
         connection.query(
 
-            "INSERT INTO news (title, ymd) VALUES (?, ?)",
+            "INSERT INTO journey (journey_name, journey_leader_name, journey_leader_phone, journey_start_data, journey_end_data, journey_num, journey_perPrice, journey_total) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
             [
-                request.body.title, 
-                request.body.ymd
+                request.body.journey_name, 
+                request.body.journey_leader_name,
+				request.body.journey_leader_phone, 
+				request.body.journey_start_data, 
+				request.body.journey_end_data, 
+				request.body.journey_num, 
+				request.body.journey_perPrice, 
+				request.body.journey_total
             ],
             function(error, result) {
                 console.log(result);
@@ -92,11 +98,16 @@ app.post("/home/journey", function(request, response){
 app.put("/home/journey", function(request, response){
 
 	connection.query(
-		"UPDATE news SET title = ?, ymd = ? WHERE newsId =" + request.body.newsId,
+		"UPDATE news SET title = ?, ymd = ? WHERE newsId =" + request.body.journey,
 		[
-			request.body.title,
-			request.body.ymd
-
+			request.body.journey_name, 
+			request.body.journey_leader_name,
+			request.body.journey_leader_phone, 
+			request.body.journey_start_data, 
+			request.body.journey_end_data, 
+			request.body.journey_num, 
+			request.body.journey_perPrice, 
+			request.body.journey_total
 		]);
 		response.send("row updated");
 
@@ -106,7 +117,7 @@ app.put("/home/journey", function(request, response){
 app.delete("/home/journey", function (request, response) {
 
 	connection.query(
-		"delete from news where newsId = " + request.body.newsId,
+		"delete from journey where journeyId = " + request.body.journey,
 			[]
 		);
 	response.send("row deleted.");

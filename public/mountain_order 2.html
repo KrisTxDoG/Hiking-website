@@ -350,7 +350,7 @@
     </section>
 
     <section id="mountain_SQL" class="intro-section">
-        <p id="test"></p>
+        
     </section>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -362,34 +362,19 @@
 
             var mountain = 
             [
-                {
-                    journey_name: "北大武三天兩夜", 
-                    journey_name: "Krist",
-                    journey_name: "0975870720",
-                    journey_start_data: "2023-05-21",
-                    journey_end_data: "2023-05-23",
-                    journey_num: 1,
-                    journey_perPrice: 0,
-                    journey_total: 0
-                },
-                {
-                    journey_name: "北大武三天兩夜", 
-                    journey_name: "Krist",
-                    journey_name: "0975870720",
-                    journey_start_data: "2023-05-21",
-                    journey_end_data: "2023-05-23",
-                    journey_num: 1,
-                    journey_perPrice: 0,
-                    journey_total: 0
-                }
+
             ];
 
 
             $.get("/home/journey", function(e) {
+
                 mountain_MySQL = JSON.parse(e);
                 refreshNewUI();
 
-                // console.log(e) // [{"journey_id":1,"journey_name":"北大武三天兩夜","journey_leader_name":"Krist","journey_leader_phone":"0975870720","journey_start_data":"2023-05-20T16:00:00.000Z","journey_end_data":"2023-05-22T16:00:00.000Z","journey_num":"1","journey_p
+                console.log(e);
+                console.log(mountain_MySQL[0].journey_name);
+         
+
             })
 
                 
@@ -404,7 +389,9 @@
                         var num = obj.journey_num;
                         var total = perPrice * parseInt(num)
 
-                        // console.log(mountain_MySQL[0].journey_name); // 北大武三天兩夜
+                        console.log(mountain_MySQL[0].journey_name);
+                        console.log(perPrice);
+                        console.log(num);
 
                         // ----- 示範程式碼 ------
                         // var $li = $('<li><li>')
@@ -421,48 +408,42 @@
                     })
                 }
 
-                // ----- 試試看 點擊按鈕 是否可以執行-----
-                // 新增資料
-                $("#Moun_order").click(function() {
+                $("Moun_order").click(function() {
 
-                    // 必須符合 MySQL 當中的格式
                     var Moun_order = {
-                        journey_name: "北大武三天兩夜", 
-                        journey_leader_name: "Krist",
-                        journey_leader_phone: "0975870720",
-                        journey_start_data: "2023-05-21",
-                        journey_end_data: "2023-05-23",
-                        journey_num: 1,
-                        journey_perPrice: 0,
-                        journey_total: 0
-                    };
 
-                    // 透過傳輸
-                    $.ajax({
-                        type: "post",
-                        url: "/home/journey",
-                        data:Moun_order,
-                        dataType:"text",
-                        success: function(happy) {
-                            $("#test").text("happy");
-                        }
-                    })
+                        journey_name: $("#Moun_order_name").find("option:selected").val(),
+                        journey_num: $("#Moun_order_num").find("option:selected").val()
 
-                    // 重新取回資料
-                    .then(function(e) {
-                        $.get("/home/journey", function(e) {
-                            // JOSN 字串轉換為數值或物件
-                            mountain.JSON.parse(e);
-                            refreshNewUI();
-                        })
-                    })
+                    }
+
+                    console.log(Moun_order);
+
                 })
 
-                
+                console.log(Moun_order[0]);
         })
         
     
     </script>
     
+        
+    <script>
+
+        // $("#buy_1").click(function() {
+
+        //     var mountain_name = $("#BIGMOUNTAIN").val();
+        //     var $ta = $(`<p class="text-center"> ${mountain_name} </p>`)
+        //     $ta.appendTo("#mountain_name");
+
+        //     console.log();
+
+        // })
+
+        // var mountain_name = $("#BIGMOUNTAIN").text();
+        // console.log(typeof(mountain_name));
+
+    </script>
+
 </body>
 </html>
