@@ -151,8 +151,8 @@
 
                      <div class="mb-3">
                     <label for="Moun_name" class="form-label">行程選擇</label>
-                    <select class="form-select" name="" id="Moun_name">
-                        <option>北大武山</option>
+                    <select class="form-select" name="" id="Moun_order_name">
+                        <option value="">北大武山</option>
                         <option>玉山主峰</option>
                         <option>雪山主峰</option>
                         <option>嘉明湖</option>
@@ -163,7 +163,7 @@
                   </div>
                   <div class="mb-3">
                     <label for="Moun_num" class="form-label">數量</label>
-                    <select id="Moun_num" class="form-select">
+                    <select id="Moun_num" class="form-select" id="Moun_order_num">
                       <option>1</option>
                       <option>2</option>
                       <option>3</option>
@@ -190,7 +190,7 @@
                         </label>
                     </div>
                   </div>
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary" id="Moun_order">提交</button>
                 </fieldset>
               </form>
         </div>
@@ -268,12 +268,12 @@
                                     <form action="#">
                                         <label for="lang"></label>
                                         <select name="languages" id="HELLO">
-                                            <option value="">1</option>
-                                            <option value="">2</option>
-                                            <option value="">3</option>
-                                            <option value="">4</option>
-                                            <option value="">5</option>
-                                            <option value="">6</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
                                         </select>
                                     </form>
                                 </td>
@@ -406,9 +406,22 @@
                         $tb.appendTo("#mountain_name")
 
                     })
-                
-
                 }
+
+                $("Moun_order").click(function() {
+
+                    var Moun_order = {
+
+                        journey_name: $("#Moun_order_name").find("option:selected").val(),
+                        journey_num: $("#Moun_order_num").find("option:selected").val()
+
+                    }
+
+                    console.log(Moun_order);
+
+                })
+
+                console.log(Moun_order[0]);
         })
         
     
