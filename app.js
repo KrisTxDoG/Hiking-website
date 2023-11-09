@@ -35,7 +35,7 @@ var connection = mysql.createConnection({
 	host : '127.0.0.1',
 	user : 'root',
 	password : 'root',
-	database : 'labDB',
+	database : 'ProjectA_Order',
     port: 8889
     
 });
@@ -51,9 +51,9 @@ connection.connect(function(err) {
 });
 
 // get data
-app.get("/home/news", function (request, response) {
+app.get("/home/journey", function (request, response) {
 
-	connection.query('select * from news', 
+	connection.query('select * from journey', 
 		'',
 		function(err, rows) {
 			if (err)	{
@@ -68,7 +68,7 @@ app.get("/home/news", function (request, response) {
 })
 
 // Add data
-app.post("/home/news", function(request, response){
+app.post("/home/journey", function(request, response){
 
         connection.query(
 
@@ -89,7 +89,7 @@ app.post("/home/news", function(request, response){
 )
 
 // update
-app.put("/home/news", function(request, response){
+app.put("/home/journey", function(request, response){
 
 	connection.query(
 		"UPDATE news SET title = ?, ymd = ? WHERE newsId =" + request.body.newsId,
@@ -103,7 +103,7 @@ app.put("/home/news", function(request, response){
 })
 
 // delete
-app.delete("/home/news", function (request, response) {
+app.delete("/home/journey", function (request, response) {
 
 	connection.query(
 		"delete from news where newsId = " + request.body.newsId,
