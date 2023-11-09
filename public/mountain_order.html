@@ -138,6 +138,8 @@
     <!-- 提交表單 -->
     <section>
         <div class="m-5">
+
+            <!-- 訂單提交 -->
             <form>
                 <fieldset>
                   <legend>表單提交</legend>
@@ -152,43 +154,25 @@
                      <div class="mb-3">
                     <label for="Moun_name" class="form-label">行程選擇</label>
                     <select class="form-select" name="" id="Moun_order_name">
-                        <option value="">北大武山</option>
-                        <option>玉山主峰</option>
-                        <option>雪山主峰</option>
-                        <option>嘉明湖</option>
-                        <option>奇萊南華</option>
-                        <option>大霸尖山</option>
+                        <option value="北大武山">北大武山</option>
+                        <option value="玉山主峰">玉山主峰</option>
+                        <option value="雪山主峰">雪山主峰</option>
+                        <option value="嘉明湖">嘉明湖</option>
+                        <option value="奇萊南華">奇萊南華</option>
+                        <option value="大霸尖山">大霸尖山</option>
                     </select>
         
                   </div>
                   <div class="mb-3">
                     <label for="Moun_num" class="form-label">數量</label>
-                    <select id="Moun_num" class="form-select" id="Moun_order_num">
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                      <option>5</option>
-                      <option>6</option>
+                    <select class="form-select" id="Moun_order_num">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
                     </select>
-
-                  </div>
-
-                  <label for="">是否訂餐</label>
-                  <div class="mb-3">
-                    <div class="form-check">
-                
-                        <input class="form-check-input" type="radio" id="disabledFieldsetCheck" value="option1" name="exampleRadios">
-                        <label class="form-check-label" for="disabledFieldsetCheck">
-                        是
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" id="Hello" value="option2" name="exampleRadios">
-                        <label class="form-check-label" for="Hello">
-                        否
-                        </label>
-                    </div>
                   </div>
                   <button type="submit" class="btn btn-primary" id="Moun_order">提交</button>
                 </fieldset>
@@ -241,7 +225,7 @@
                                 <th scope="col"><p class="text-center">商品</p></th>
                                 <th scope="col"><p class="text-center">價格</p></th>
                                 <th scope="col"><p class="text-center">數量</p></th>
-                                <th scope="col"><p class="text-center">總計</p></th>
+                                <!-- <th scope="col"><p class="text-center">總計</p></th> -->
                               </tr>
                             </thead>
     
@@ -261,24 +245,14 @@
                                 </td>
     
                                 <td >
-                                    <p class="text-center">6000/人</p>
+                                    <p class="text-center" id="mountain_per_QQQ"></p>
                                 </td>
     
                                 <td >
-                                    <form action="#">
-                                        <label for="lang"></label>
-                                        <select name="languages" id="HELLO">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                        </select>
-                                    </form>
+                                    <p class="text-center" id="mountain_num"></p>
                                 </td>
     
-                                <td ><p class="text-center" id="total_money">6000</p></td>
+                                <!-- <td ><p class="text-center" id="total_money"></p></td> -->
                 
                               </tr>
     
@@ -301,7 +275,8 @@
                                 <td><p class="text-start">小記</p></td>
                             </tr>
                             <tr>
-                                <td><p class="text-start">總計</p></td>
+                                <td><p class="text-start">總計</p><p id="totalMoney"></p></td>
+                                
                             </tr>
     
                             
@@ -408,15 +383,22 @@
 
                         // ----- 示範程式碼 ------
                         // var $li = $('<li><li>')
-                        //             .text(mountain_list + perPrice + num)
+                        //             .text(mountain_list + perPrice + num)mountain_per
                         //             .addClass("list-group-item")
                         // $li.append('<span class="pull-right"><button class="btn btn-info btn-xs editItem"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>&nbsp;<button class="btn btn-danger btn-xs deleteItem"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></span>');
                         // $li.appendTo("#latestNews");
 
 
-                        var $tb = $(`<p class="text-center"> ${mountain_list} </p>`)
+                        var $Mn = $(`<p class="text-center"> ${mountain_list} </p>`);
+                        $Mn.appendTo("#mountain_name");
 
-                        $tb.appendTo("#mountain_name")
+                        var $Mu = $(`<p class="text-center"> ${num} </p>`);
+                        $Mu.appendTo("#mountain_num");
+
+                        var $Mt = $(`<p class="text-center"> ${perPrice} </p>`);
+                        $Mt.appendTo("#mountain_per_QQQ");
+
+                        
 
                     })
                 }
@@ -424,17 +406,34 @@
                 // ----- 試試看 點擊按鈕 是否可以執行-----
                 // 新增資料
                 $("#Moun_order").click(function() {
+                    
+                    var perMoney = [];
+                    if($("#Moun_order_name").val() == "北大武山") {
+                        perMoney = 6000;
+                    }else if($("#Moun_order_name").val() == "玉山主峰") {
+                        perMoney = 4000;
+                    }else if($("#Moun_order_name").val() == "雪山主峰") {
+                        perMoney = 7500;
+                    }else if($("#Moun_order_name").val() == "嘉明湖") {
+                        perMoney = 8000;
+                    }else if($("#Moun_order_name").val() == "奇萊南華") {
+                        perMoney = 4500;
+                    }else if($("#Moun_order_name").val() == "大霸尖山") {
+                        perMoney = 5000;
+                    }else {
+                        console.log("不知道");
+                    }
 
                     // 必須符合 MySQL 當中的格式
                     var Moun_order = {
-                        journey_name: "北大武三天兩夜", 
+                        journey_name: $("#Moun_order_name").val(), 
                         journey_leader_name: "Krist",
                         journey_leader_phone: "0975870720",
                         journey_start_data: "2023-05-21",
                         journey_end_data: "2023-05-23",
-                        journey_num: 1,
-                        journey_perPrice: 0,
-                        journey_total: 0
+                        journey_num: $("#Moun_order_num").val(),
+                        journey_perPrice: perMoney,
+                        journey_total: perMoney * $("#Moun_order_num").val()
                     };
 
                     // 透過傳輸
@@ -458,6 +457,8 @@
                     })
                 })
 
+                console.log(Moun_total);
+
                 
         })
         
@@ -465,6 +466,8 @@
     </script>
 
     <script>
+
+                
 
 
     </script>
