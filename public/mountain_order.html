@@ -3,20 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <!-- Bootstrap -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/bootstrap-icons.css" rel="stylesheet">
-        <link href="../css/tooplate-clean-work.css" rel="stylesheet">
-        <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="../js/navbar.js">
-        <link rel="stylesheet" href="js/jquery.min.js">
-        <link rel="stylesheet" href="js/bootstrap.min.js">
-    <title>北大武訂單</title>
-
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+        <link href="css/tooplate-clean-work.css" rel="stylesheet">
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./js/jquery.min.js">
 </head>
 <body>
     <nav id="navBarRun" class="navbar navbar-expand-lg navbar-adjust" style="width:100%; background: var(--secondary-color); top:0px !important;">
@@ -71,6 +67,19 @@
 
     <br><br><br><br><br>
 
+    <!-- 標頭地區 -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-12 ">
+                    <div class="ms-5" style="margin-left: 450px !important;"><img class="img-fluid" src="img/icon/mountain 3.png" alt=""></div>
+                </div>
+                <div class="col-lg-7 col-12 mt-4">
+                    <div><h2>價目表</h2></div>
+                </div>
+            </div>
+        </div>
+    </section>
     <div class="container">
         <div class="m-5">
             <form action="">
@@ -81,7 +90,8 @@
                         <th scope="col">#</th>
                         <th scope="col">山岳名稱</th>
                         <th scope="col">售價</th>
-                        <th scope="col">日期</th>
+                        <th scope="col">開始日期</th>
+                        <th scope="col">結束日期</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -90,11 +100,13 @@
                         <td>北大武</td>
                         <td>6000</td>
                         <td>2022-02-30</td>
+                        <td>2022-02-30</td>
                       </tr>
                       <tr>
                         <th scope="row">2</th>
                         <td>玉山主峰</td>
                         <td>4000</td>
+                        <td>2022-02-30</td>
                         <td>2022-02-30</td>
                       </tr>
                       <tr>
@@ -102,11 +114,13 @@
                         <td >奇萊南華</td>
                         <td>4500</td>
                         <td>2022-02-30</td>
+                        <td>2022-02-30</td>
                       </tr>
                       <tr>
                         <th scope="row">4</th>
                         <td>大霸尖山</td>
                         <td>5000</td>
+                        <td>2022-02-30</td>
                         <td>2022-02-30</td>
                       </tr>
                       <tr>
@@ -114,15 +128,15 @@
                         <td>雪山主峰</td>
                         <td>7500</td>
                         <td>2022-02-30</td>
+                        <td>2022-02-30</td>
                       </tr>
                       <tr>
                         <th scope="row">6</th>
                         <td>嘉明湖</td>
                         <td>8000</td>
                         <td>2022-02-30</td>
-                      </tr>
-            
-                      
+                        <td>2022-02-30</td>
+                      </tr> 
                     </tbody>
                   </table>
 
@@ -135,6 +149,18 @@
         </div>
     </div>
     
+    <section class="intro-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-12 ">
+                    <div class="ms-5" style="margin-left: 450px !important;"><img class="img-fluid" src="img/icon/checklist.png" alt=""></div>
+                </div>
+                <div class="col-lg-7 col-12 mt-4">
+                    <div><h2>表單提交</h2></div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- 提交表單 -->
     <section>
         <div class="m-5">
@@ -174,7 +200,7 @@
                       <option value="6">6</option>
                     </select>
                   </div>
-                  <button type="submit" class="btn btn-primary" id="Moun_order">提交</button>
+                  <button type="submit" class="btn text-white w-100" style="background-color:var(--secondary-color)" id="Moun_order">提交</button>
                 </fieldset>
               </form>
         </div>
@@ -209,6 +235,18 @@
     </div>  -->
 
 
+    <section class="intro-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-12 ">
+                    <div class="ms-5" style="margin-left: 450px !important;"><img class="img-fluid" src="img/icon/booking.png" alt=""></div>
+                </div>
+                <div class="col-lg-7 col-12 mt-4">
+                    <div><h2>價目表</h2></div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- 樣式板模 -->
     <section class="intro-section">
         <div class="container">
@@ -225,19 +263,17 @@
                                 <th scope="col"><p class="text-center">商品</p></th>
                                 <th scope="col"><p class="text-center">價格</p></th>
                                 <th scope="col"><p class="text-center">數量</p></th>
+                                <th scope="col"><p class="text-center">小記</p></th>
                                 <!-- <th scope="col"><p class="text-center">總計</p></th> -->
                               </tr>
                             </thead>
     
                             <tbody>
                               <tr>
-                                <th scope="col">1</th>
+                                <th scope="col" id="mountain_index"></th>
     
                                 <td >
-                                    <div >
-                        
-                                    </div>
-                            
+                                    <p class="text-center" id="mountain_leader"></p>
                                 </td>
     
                                 <td >
@@ -250,6 +286,9 @@
     
                                 <td >
                                     <p class="text-center" id="mountain_num"></p>
+                                </td>
+                                <td>
+                                    <p class="text-center" id="mountain_little_total"></p>
                                 </td>
     
                                 <!-- <td ><p class="text-center" id="total_money"></p></td> -->
@@ -282,7 +321,7 @@
                             
                         </tbody>
                     </table>
-                    <button class="btn btn-primary w-100">前往結賬</button>
+                    <button class="btn w-100 text-white" style="background-color: var(--secondary-color);">前往結賬</button>
 
                     <br><br>
                     <table class="table table-striped">
@@ -314,7 +353,7 @@
                         <br>
                     
                         <tbody>
-                            <button class="btn btn-danger w-100">使用折價卷</button>
+                            <button class="btn w-100 text-white" style="background-color:var(--secondary-color)">使用折價卷</button>
                         </tbody>
                     </table>
 
@@ -322,10 +361,6 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <section id="mountain_SQL" class="intro-section">
-        <p id="test"></p>
     </section>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -369,37 +404,43 @@
 
                 
 
-
+                var jou_index = 1;
                 function refreshNewUI() {
                     $("#latestNews").empty();
 
                     $.each(mountain_MySQL, function(key, obj) {
-                        var mountain_list = obj.journey_name;
-                        var perPrice = obj.journey_perPrice;
-                        var num = obj.journey_num;
-                        var total = perPrice * parseInt(num)
+                        var jou_name = obj.journey_name;
+                        var jou_perPrice = obj.journey_perPrice;
+                        var jou_num = obj.journey_num;
+                        var jou_total = jou_perPrice * parseInt(jou_num);
+                        var jou_leader = obj.journey_leader_name;
 
-                        // console.log(mountain_MySQL[0].journey_name); // 北大武三天兩夜
-
-                        // ----- 示範程式碼 ------
-                        // var $li = $('<li><li>')
-                        //             .text(mountain_list + perPrice + num)mountain_per
-                        //             .addClass("list-group-item")
-                        // $li.append('<span class="pull-right"><button class="btn btn-info btn-xs editItem"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>&nbsp;<button class="btn btn-danger btn-xs deleteItem"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></span>');
-                        // $li.appendTo("#latestNews");
+                        // 建立 index 
+                    
 
 
-                        var $Mn = $(`<p class="text-center"> ${mountain_list} </p>`);
+                        // 將資料加入到 HTML 當中
+                        var $Mn = $(`<p class="text-center"> ${jou_name} </p>`);
                         $Mn.appendTo("#mountain_name");
 
-                        var $Mu = $(`<p class="text-center"> ${num} </p>`);
+                        var $Mu = $(`<p class="text-center"> ${jou_num} </p>`);
                         $Mu.appendTo("#mountain_num");
 
-                        var $Mt = $(`<p class="text-center"> ${perPrice} </p>`);
+                        var $Mt = $(`<p class="text-center"> ${jou_perPrice} </p>`);
                         $Mt.appendTo("#mountain_per_QQQ");
 
-                        
+                        var $Ml = $(`<p class="text-center"> ${jou_leader} </p>`);
+                        $Ml.appendTo("#mountain_leader");
 
+                        var $Mlt = $(`<p class="text-center"> ${jou_total} </p>`);
+                        $Mlt.appendTo("#mountain_little_total");
+
+
+                        // index 呈現在網頁上
+                        var $M_index = $(`<p class="text-center"> ${jou_index} </p>`);
+                        $M_index.appendTo("#mountain_index");
+                        jou_index++;
+                        
                     })
                 }
 
@@ -424,10 +465,28 @@
                         console.log("不知道");
                     }
 
+                    // 設定領隊
+                    var leader = [];
+                    if($("#Moun_order_name").val() == "北大武山") {
+                        leader = "Krist";
+                    }else if($("#Moun_order_name").val() == "玉山主峰") {
+                        leader = "Sofiya";
+                    }else if($("#Moun_order_name").val() == "雪山主峰") {
+                        leader = "Hello";
+                    }else if($("#Moun_order_name").val() == "嘉明湖") {
+                        leader = "Bill";
+                    }else if($("#Moun_order_name").val() == "奇萊南華") {
+                        leader = "Mariya";
+                    }else if($("#Moun_order_name").val() == "大霸尖山") {
+                        leader = "Jerry";
+                    }else {
+                        console.log("不知道");
+                    }
+
                     // 必須符合 MySQL 當中的格式
                     var Moun_order = {
                         journey_name: $("#Moun_order_name").val(), 
-                        journey_leader_name: "Krist",
+                        journey_leader_name: leader,
                         journey_leader_phone: "0975870720",
                         journey_start_data: "2023-05-21",
                         journey_end_data: "2023-05-23",
