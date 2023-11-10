@@ -117,7 +117,7 @@ app.put("/home/journey", function(request, response){
 app.delete("/home/journey", function (request, response) {
 
 	connection.query(
-		"delete from journey where journeyId = " + request.body.journey,
+		"delete from journey where journey_id = " + request.body.journey_id,
 			[]
 		);
 	response.send("row deleted.");

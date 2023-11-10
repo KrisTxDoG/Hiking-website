@@ -13,6 +13,7 @@
         <link href="css/tooplate-clean-work.css" rel="stylesheet">
         <link rel="stylesheet" href="./css/style.css">
         <link rel="stylesheet" href="./js/jquery.min.js">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 <body>
     <nav id="navBarRun" class="navbar navbar-expand-lg navbar-adjust" style="width:100%; background: var(--secondary-color); top:0px !important;">
@@ -65,7 +66,11 @@
     </div>
     </nav>
 
+
+
     <br><br><br><br><br>
+
+
 
     <!-- 標頭地區 -->
     <section class="intro-section">
@@ -143,12 +148,11 @@
             </form>
 
             <hr>
-
-
-            
         </div>
     </div>
     
+
+
     <section class="intro-section">
         <div class="container">
             <div class="row">
@@ -161,11 +165,12 @@
             </div>
         </div>
     </section>
+
+
+
     <!-- 提交表單 -->
     <section>
         <div class="m-5">
-
-            <!-- 訂單提交 -->
             <form>
                 <fieldset>
                   <legend>表單提交</legend>
@@ -208,33 +213,6 @@
 
 
 
-    <!-- 範例 -->
-    <!-- <div class="container">
-
-        <div class="row">
-    
-            <div class="col-sm-4">
-                <h2>最新消息<span class="pull-right"><button id="newItem" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button></span></h2>
-                <ul id="latestNews" class="list-group">
-                    <li class="list-group-item">First item<span class="pull-right"><button class="btn btn-info btn-xs editItem"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>&nbsp;<button class="btn btn-danger btn-xs deleteItem"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></span></li>
-                    <li class="list-group-item">Second item<span class="pull-right"><button class="btn btn-info btn-xs editItem"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>&nbsp;<button class="btn btn-danger btn-xs deleteItem"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></span></li>
-                    <li class="list-group-item">Third item<span class="pull-right"><button class="btn btn-info btn-xs editItem"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button>&nbsp;<button class="btn btn-danger btn-xs deleteItem"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></span></li>
-                </ul>
-            </div>
-    
-            <div class="col-sm-4">
-                &nbsp;
-            </div>
-    
-            <div class="col-sm-4">
-                &nbsp;
-            </div>
-    
-        </div>  
-    
-    </div>  -->
-
-
     <section class="intro-section">
         <div class="container">
             <div class="row">
@@ -247,6 +225,9 @@
             </div>
         </div>
     </section>
+
+
+    
     <!-- 樣式板模 -->
     <section class="intro-section">
         <div class="container">
@@ -264,44 +245,53 @@
                                 <th scope="col"><p class="text-center">價格</p></th>
                                 <th scope="col"><p class="text-center">數量</p></th>
                                 <th scope="col"><p class="text-center">小記</p></th>
+                                <!-- <th scope="col"><p class="text-center">刪除</p></th> -->
                                 <!-- <th scope="col"><p class="text-center">總計</p></th> -->
                               </tr>
                             </thead>
     
-                            <tbody>
+                            <tbody >
                               <tr>
                                 <th scope="col" id="mountain_index"></th>
     
                                 <td >
                                     <p class="text-center" id="mountain_leader"></p>
                                 </td>
-    
+                           
                                 <td >
                                     <p class="text-center" id="mountain_name"></p>
                                 </td>
-    
+                            
                                 <td >
                                     <p class="text-center" id="mountain_per_QQQ"></p>
                                 </td>
-    
+                             
                                 <td >
                                     <p class="text-center" id="mountain_num"></p>
                                 </td>
+                             
                                 <td>
-                                    <p class="text-center" id="mountain_little_total"></p>
+                                    <p class="text-center" class="MoneyQQQ" id="mountain_little_total"></p>
                                 </td>
+                            
+                                <!-- 刪除鍵 -->
+                                <!-- <td>
+                                    <div class="text-center mountain_del"></div>
+                                </td> -->
     
                                 <!-- <td ><p class="text-center" id="total_money"></p></td> -->
                 
                               </tr>
-    
+                            
                             </tbody>
                         </table>
+                        <button type="submit" class="btn text-white w-100" style="background-color:var(--secondary-color)" id="mountain_del">刪除</button>
 
-                    </form>
-
-
+                    </form>   
                 </div>
+
+
+
                 <div class="col-lg-6 ">
                     <table class="table table-striped">
                         <thead>
@@ -311,10 +301,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><p class="text-start">小記</p></td>
-                            </tr>
-                            <tr>
-                                <td><p class="text-start">總計</p><p id="totalMoney"></p></td>
+                                <td><p class="text-start" id="total_money">總計</p><p id="totalMoney"></p></td>
                                 
                             </tr>
     
@@ -335,8 +322,8 @@
                         </tbody>
                     </table>
 
-                    <section></section>
 
+                    <!-- 輸入折價券 -->
                     <div class="w-100">
                         <input type="text" style="width: 100%" placeholder="   請 輸 入 折 價 卷">
                     </div>
@@ -414,8 +401,7 @@
                         var jou_num = obj.journey_num;
                         var jou_total = jou_perPrice * parseInt(jou_num);
                         var jou_leader = obj.journey_leader_name;
-
-                        // 建立 index 
+                        var jou_ID = obj.journey_Id;
                     
 
 
@@ -435,14 +421,36 @@
                         var $Mlt = $(`<p class="text-center"> ${jou_total} </p>`);
                         $Mlt.appendTo("#mountain_little_total");
 
+                        // ----- 刪除鍵 ----- 
+                        // var $M_del = $(`<button class="btn btn-danger"><i class="bi bi-trash"></i></button><br>`);
+                        // $M_del.appendTo(".mountain_del");
+
 
                         // index 呈現在網頁上
                         var $M_index = $(`<p class="text-center"> ${jou_index} </p>`);
                         $M_index.appendTo("#mountain_index");
                         jou_index++;
-                        
+                    })
+
+
+
+                    // 設定刪除鍵
+                    $("#mountain_del").click(function() {
+                        $.ajax({
+                            type: "delete",
+                            url : "/home/journey",
+                            data: mountain_MySQL[mountain_MySQL.length -1]
+                        })
+                        .then(function() {
+                            $.get("/home/journey", function(e) {
+                                mountain_MySQL = JSON.parse(e);
+                                refreshNewUI();
+                            })
+                        })
                     })
                 }
+
+
 
                 // ----- 試試看 點擊按鈕 是否可以執行-----
                 // 新增資料
@@ -517,9 +525,9 @@
                 })
 
                 console.log(Moun_total);
-
-                
         })
+
+
         
     
     </script>
