@@ -84,6 +84,7 @@
                             <thead>
                               <tr>
                                 <th scope="col"><p class="text-center">編號</p></th>
+                                <th scope="col"><p class="text-center">圖片</p></th>
                                 <th scope="col"><p class="text-center">領隊</p></th>
                                 <th scope="col"><p class="text-center">商品</p></th>
                                 <th scope="col"><p class="text-center">價格</p></th>
@@ -97,6 +98,10 @@
                             <tbody >
                               <tr>
                                 <th scope="col" id="mountain_index"></th>
+
+                                <td>
+                                    <p class="text-center mountain_img" id="mountain_img"></p>
+                                </td>
     
                                 <td >
                                     <p class="text-center" id="mountain_leader"></p>
@@ -132,8 +137,12 @@
                     </form>   
                 </div>
 
-                <div id="test_1" value="北大武山">北大武山</div>
-                <div id="test">Hello</div>
+                <div id="test"> 大霸尖山 </div>
+
+                <div id="test_1"></div>
+                <div id="test_2"></div>
+
+                <!-- <img src="./img/mountain/北大武_1.jpeg" alt=""> -->
 
 
 
@@ -177,9 +186,106 @@
             })
 
                 
-
+                // 計時的變數
                 var jou_index = 1;
-                var jou_id = 1;
+                var jou_id_test = 1;
+                jou_id_test.toString();
+
+
+
+
+                // 設定顯示的圖案
+                // 大霸尖山
+                var img = document.createElement("img");
+                img.src = "./img/mountain/大霸尖山_1.jpeg";
+                img.setAttribute("class", "img-fluid");
+                img.setAttribute("style", "width:100px; height:auto");
+                img.setAttribute("class", "border border-dark");
+
+
+                // 玉山主峰
+                var img_1 = document.createElement("img");
+                img_1.src = "./img/mountain/玉山主峰_1.jpeg";
+                img_1.setAttribute("class", "img-fluid");
+                img_1.setAttribute("style", "width:100px; height:auto");
+                img_1.setAttribute("class", "border border-dark");
+
+                // 奇萊南華
+                var img_2 = document.createElement("img");
+                img_2.src = "./img/mountain/奇萊南華-2.jpeg";
+                img_2.setAttribute("class", "img-fluid");
+                img_2.setAttribute("style", "width:100px; height:auto");
+                img_2.setAttribute("class", "border border-dark");
+
+                // 雪山主峰
+                var img_3 = document.createElement("img");
+                img_3.src = "./img/mountain/雪山主峰_1.jpeg";
+                img_3.setAttribute("class", "img-fluid");
+                img_3.setAttribute("style", "width:100px; height:auto");
+                img_3.setAttribute("class", "border border-dark");
+                
+                // 嘉明湖
+                var img_4 = document.createElement("img");
+                img_4.src = "./img/mountain/嘉明湖_1.jpeg";
+                img_4.setAttribute("class", "img-fluid");
+                img_4.setAttribute("style", "width:100px; height:auto");
+                img_4.setAttribute("class", "border border-dark");
+
+                // 奇萊南華
+                var img_5 = document.createElement("img");
+                img_5.src = "./img/mountain/北大武_1.jpeg";
+                img_5.setAttribute("class", "img-fluid");
+                img_5.setAttribute("style", "width:100px; height:auto");
+                img_5.setAttribute("class", "border border-dark");
+
+
+                // 設定顯示的圖案
+                // 大霸尖山
+                var img6 = document.createElement("img");
+                img6.src = "./img/mountain/大霸尖山_1.jpeg";
+                img6.setAttribute("class", "img-fluid");
+                img6.setAttribute("style", "width:100px; height:auto");
+                img6.setAttribute("class", "border border-dark");
+
+
+                // 玉山主峰
+                var img7 = document.createElement("img");
+                img7.src = "./img/mountain/玉山主峰_1.jpeg";
+                img7.setAttribute("class", "img-fluid");
+                img7.setAttribute("style", "width:100px; height:auto");
+                img7.setAttribute("class", "border border-dark");
+
+                // 奇萊南華
+                var img8 = document.createElement("img");
+                img8.src = "./img/mountain/奇萊南華-2.jpeg";
+                img8.setAttribute("class", "img-fluid");
+                img8.setAttribute("style", "width:100px; height:auto");
+                img8.setAttribute("class", "border border-dark");
+
+                // 雪山主峰
+                var img9 = document.createElement("img");
+                img9.src = "./img/mountain/雪山主峰_1.jpeg";
+                img9.setAttribute("class", "img-fluid");
+                img9.setAttribute("style", "width:100px; height:auto");
+                img9.setAttribute("class", "border border-dark");
+                
+                // 嘉明湖
+                var img10 = document.createElement("img");
+                img10.src = "./img/mountain/嘉明湖_1.jpeg";
+                img10.setAttribute("class", "img-fluid");
+                img10.setAttribute("style", "width:100px; height:auto");
+                img10.setAttribute("class", "border border-dark");
+
+                // 奇萊南華
+                var img11 = document.createElement("img");
+                img11.src = "./img/mountain/北大武_1.jpeg";
+                img11.setAttribute("class", "img-fluid");
+                img11.setAttribute("style", "width:100px; height:auto");
+                img11.setAttribute("class", "border border-dark");
+
+                
+
+
                 function refreshNewUI() {
                     $("#latestNews").empty();
 
@@ -194,20 +300,25 @@
                         
 
                         // 將資料加入到 HTML 當中
-                        var $Mn = $(`<p class="text-center" id = "name_${jou_id}"> ${jou_name} </p>`);
+                        var $Mn = $(`<p class="text-center" id = "name_${jou_id_test}"> ${jou_name} </p>`);
                         $Mn.appendTo("#mountain_name");
 
-                        var $Mu = $(`<p class="text-center" id = "num_${jou_id}"> ${jou_num} </p>`);
+                        var $Mu = $(`<p class="text-center" id = "num_${jou_id_test}"> ${jou_num} </p>`);
                         $Mu.appendTo("#mountain_num");
 
-                        var $Mt = $(`<p class="text-center" id = "perPrice_${jou_id}"> ${jou_perPrice} </p>`);
+                        var $Mt = $(`<p class="text-center" id = "perPrice_${jou_id_test}"> ${jou_perPrice} </p>`);
                         $Mt.appendTo("#mountain_per_QQQ");
 
-                        var $Ml = $(`<p class="text-center" id = "leader_${jou_id}"> ${jou_leader} </p>`);
+                        var $Ml = $(`<p class="text-center" id = "leader_${jou_id_test}"> ${jou_leader} </p>`);
                         $Ml.appendTo("#mountain_leader");
 
-                        var $Mlt = $(`<p class="text-center" id = "total_${jou_id}"> ${jou_total} </p>`);
+                        var $Mlt = $(`<p class="text-center" id = "total_${jou_id_test}"> ${jou_total} </p>`);
                         $Mlt.appendTo("#mountain_little_total");
+
+                        var $i_don_know = $(`<p class="text-center" id = "img_${jou_id_test}"></p>`);
+                        $i_don_know.appendTo("#mountain_img");
+
+                        console.log($Mn);
 
                         // ----- 刪除鍵 ----- 
                         // var $M_del = $(`<button class="btn btn-danger"><i class="bi bi-trash"></i></button><br>`);
@@ -218,7 +329,56 @@
                         var $M_index = $(`<p class="text-center"> ${jou_index} </p>`);
                         $M_index.appendTo("#mountain_index");
                         jou_index++;
+                        
+
+                        jou_id_test++;
                     })
+
+                    // 將圖片加入其中.
+                    if (document.getElementById("name_1").innerHTML == " 大霸尖山 "){
+                            var test = document.getElementById("img_1");
+                            test.appendChild(img);
+                        }else if (document.getElementById("name_1").innerHTML == " 玉山主峰 "){
+                            var test_1 = document.getElementById("img_1");
+                            test_1.appendChild(img_1);
+                        }else if (document.getElementById("name_1").innerHTML == " 奇萊南華 "){
+                            var test_2 = document.getElementById("img_1");
+                            test_2.appendChild(img_2);
+                        }else if (document.getElementById("name_1").innerHTML == " 雪山主峰 "){
+                            var test_3 = document.getElementById("img_1");
+                            test_3.appendChild(img_3);
+                        }else if (document.getElementById("name_1").innerHTML == " 嘉明湖 "){
+                            var test_4 = document.getElementById("img_1");
+                            test_4.appendChild(img_4);
+                        }else if (document.getElementById("name_1").innerHTML == " 北大武山 "){
+                            var test_5 = document.getElementById("img_1");
+                            test_5.appendChild(img_5);
+                        }else {
+                            console.log("我不知道");
+                        }
+
+                        // 將圖片加入其中.
+                        if (document.getElementById("name_2").innerHTML == " 大霸尖山 "){
+                            var test_11 = document.getElementById("img_2");
+                            test_11.appendChild(img6);
+                        }else if (document.getElementById("name_2").innerHTML == " 玉山主峰 "){
+                            var test_6 = document.getElementById("img_2");
+                            test_6.appendChild(img7);
+                        }else if (document.getElementById("name_2").innerHTML == " 奇萊南華 "){
+                            var test_7 = document.getElementById("img_2");
+                            test_7.appendChild(img8);
+                        }else if (document.getElementById("name_2").innerHTML == " 雪山主峰 "){
+                            var test_8 = document.getElementById("img_2");
+                            test_8.appendChild(img9);
+                        }else if (document.getElementById("name_2").innerHTML == " 嘉明湖 "){
+                            var test_9 = document.getElementById("img_2");
+                            test_9.appendChild(img10);
+                        }else if (document.getElementById("name_2").innerHTML == " 北大武山 "){
+                            var test_10 = document.getElementById("img_2");
+                            test_10.appendChild(img11);
+                        }else {
+                            console.log("不知道喔");
+                        }
 
 
 
@@ -312,26 +472,13 @@
                         })
                     })
                 })
-
                 console.log(Moun_total);
         })
     </script>
 
     <script>
+    
         
-        var img = document.createElement("img");
-        img.src = "./img/mountain/大霸尖山_1.jpeg";
-        // var test = document.getElementById("test");
-        // test.appendChild(img);
-        if (document.getElementById("test_1").value == "北大武山"){
-            var test = document.getElementById("test");
-            test.appendChild(img);
-        }else {
-            console.log("沒有東西");
-        }
-                
-
-
     </script>
     
 </body>
