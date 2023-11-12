@@ -78,9 +78,9 @@
             <div class="row">
                 <div class="col-lg-12">
 
-                    <form action="">
-
-                        <table class="table table-striped">
+                    <form action="" cellpadding="8" style="line-height:25px;">
+ 
+                        <table class="table table-striped" style="line-height:100px !important;">
                             <thead>
                               <tr>
                                 <th scope="col"><p class="text-center">編號</p></th>
@@ -137,13 +137,6 @@
                     </form>   
                 </div>
 
-                <div id="test"> 大霸尖山 </div>
-
-                <div id="test_1"></div>
-                <div id="test_2"></div>
-
-                <!-- <img src="./img/mountain/北大武_1.jpeg" alt=""> -->
-
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -192,97 +185,107 @@
                 jou_id_test.toString();
 
 
+                // ----- 大霸尖山迴圈 -----
+                var numVariables = 20;
+                var variables_Dabajianshan = {};
+
+                for (i = 1; i <= numVariables; i++) {
+                    var variableName_Dabajianshan = 'var_Dabajianshan_' + i;
+                    var var_value_Dabajianshan = document.createElement("img");
+                    var_value_Dabajianshan.src = "./img/mountain/大霸尖山_1.jpeg";
+                    var_value_Dabajianshan.setAttribute("class", "img-fluid");
+                    var_value_Dabajianshan.setAttribute("style", "width:100px; height:auto");
+                    var_value_Dabajianshan.setAttribute("class", "border border-dark");
+
+                    variables_Dabajianshan[variableName_Dabajianshan] = var_value_Dabajianshan;
+                }
 
 
-                // 設定顯示的圖案
-                // 大霸尖山
-                var img = document.createElement("img");
-                img.src = "./img/mountain/大霸尖山_1.jpeg";
-                img.setAttribute("class", "img-fluid");
-                img.setAttribute("style", "width:100px; height:auto");
-                img.setAttribute("class", "border border-dark");
+
+                // ----- 玉山主峰迴圈 -----
+                var numVariables = 20;
+                var variables_Yushan = {};
+
+                for (i = 1; i <= numVariables; i++) {
+                    let variableName_Yushan = 'var_Yushan_' + i;
+                    let var_value_Yushan = document.createElement("img");
+                    var_value_Yushan.src = "./img/mountain/玉山主峰_1.jpeg";
+                    var_value_Yushan.setAttribute("class", "img-fluid");
+                    var_value_Yushan.setAttribute("style", "width:100px; height:auto");
+                    var_value_Yushan.setAttribute("class", "border border-dark");
+
+                    variables_Yushan[variableName_Yushan] = var_value_Yushan;
+                }
 
 
-                // 玉山主峰
-                var img_1 = document.createElement("img");
-                img_1.src = "./img/mountain/玉山主峰_1.jpeg";
-                img_1.setAttribute("class", "img-fluid");
-                img_1.setAttribute("style", "width:100px; height:auto");
-                img_1.setAttribute("class", "border border-dark");
 
-                // 奇萊南華
-                var img_2 = document.createElement("img");
-                img_2.src = "./img/mountain/奇萊南華-2.jpeg";
-                img_2.setAttribute("class", "img-fluid");
-                img_2.setAttribute("style", "width:100px; height:auto");
-                img_2.setAttribute("class", "border border-dark");
+                // ----- 奇萊南華迴圈 ----
+                var numVariables = 20;
+                var variables_Qilai = {};
 
-                // 雪山主峰
-                var img_3 = document.createElement("img");
-                img_3.src = "./img/mountain/雪山主峰_1.jpeg";
-                img_3.setAttribute("class", "img-fluid");
-                img_3.setAttribute("style", "width:100px; height:auto");
-                img_3.setAttribute("class", "border border-dark");
-                
-                // 嘉明湖
-                var img_4 = document.createElement("img");
-                img_4.src = "./img/mountain/嘉明湖_1.jpeg";
-                img_4.setAttribute("class", "img-fluid");
-                img_4.setAttribute("style", "width:100px; height:auto");
-                img_4.setAttribute("class", "border border-dark");
+                for (i = 1; i <= numVariables; i++) {
+                    let variableName_Qilai = 'var_Qilai_' + i;
+                    let var_value_Qilai = document.createElement("img");
+                    var_value_Qilai.src = "./img/mountain/奇萊南華-2.jpeg";
+                    var_value_Qilai.setAttribute("class", "img-fluid");
+                    var_value_Qilai.setAttribute("style", "width:100px; height:auto");
+                    var_value_Qilai.setAttribute("class", "border border-dark");
 
-                // 奇萊南華
-                var img_5 = document.createElement("img");
-                img_5.src = "./img/mountain/北大武_1.jpeg";
-                img_5.setAttribute("class", "img-fluid");
-                img_5.setAttribute("style", "width:100px; height:auto");
-                img_5.setAttribute("class", "border border-dark");
+                    variables_Qilai[variableName_Qilai] = var_value_Qilai;
+                }
 
 
-                // 設定顯示的圖案
-                // 大霸尖山
-                var img6 = document.createElement("img");
-                img6.src = "./img/mountain/大霸尖山_1.jpeg";
-                img6.setAttribute("class", "img-fluid");
-                img6.setAttribute("style", "width:100px; height:auto");
-                img6.setAttribute("class", "border border-dark");
+
+                // ----- 雪山主峰迴圈 ----- 
+                var numVariables = 20;
+                var variables_snow = {};
 
 
-                // 玉山主峰
-                var img7 = document.createElement("img");
-                img7.src = "./img/mountain/玉山主峰_1.jpeg";
-                img7.setAttribute("class", "img-fluid");
-                img7.setAttribute("style", "width:100px; height:auto");
-                img7.setAttribute("class", "border border-dark");
+                for (i = 1; i <= numVariables; i++) {
+                    let variableName_snow = 'var_snow_' + i;
+                    let var_value_snow = document.createElement("img");
+                    var_value_snow.src = "./img/mountain/雪山主峰_1.jpeg";
+                    var_value_snow.setAttribute("class", "img-fluid");
+                    var_value_snow.setAttribute("style", "width:100px; height:auto");
+                    var_value_snow.setAttribute("class", "border border-dark");
 
-                // 奇萊南華
-                var img8 = document.createElement("img");
-                img8.src = "./img/mountain/奇萊南華-2.jpeg";
-                img8.setAttribute("class", "img-fluid");
-                img8.setAttribute("style", "width:100px; height:auto");
-                img8.setAttribute("class", "border border-dark");
+                    variables_snow[variableName_snow] = var_value_snow;
+                }
 
-                // 雪山主峰
-                var img9 = document.createElement("img");
-                img9.src = "./img/mountain/雪山主峰_1.jpeg";
-                img9.setAttribute("class", "img-fluid");
-                img9.setAttribute("style", "width:100px; height:auto");
-                img9.setAttribute("class", "border border-dark");
-                
-                // 嘉明湖
-                var img10 = document.createElement("img");
-                img10.src = "./img/mountain/嘉明湖_1.jpeg";
-                img10.setAttribute("class", "img-fluid");
-                img10.setAttribute("style", "width:100px; height:auto");
-                img10.setAttribute("class", "border border-dark");
 
-                // 奇萊南華
-                var img11 = document.createElement("img");
-                img11.src = "./img/mountain/北大武_1.jpeg";
-                img11.setAttribute("class", "img-fluid");
-                img11.setAttribute("style", "width:100px; height:auto");
-                img11.setAttribute("class", "border border-dark");
 
+                // ----- 嘉明湖迴圈 -----
+                var numVariables = 20;
+                var variables_Jiaming = {};
+
+
+                for (i = 1; i <= numVariables; i++) {
+                    let variableName_Jiaming = 'var_Jiaming_' + i;
+                    let var_value_Jiaming = document.createElement("img");
+                    var_value_Jiaming.src = "./img/mountain/嘉明湖_1.jpeg";
+                    var_value_Jiaming.setAttribute("class", "img-fluid");
+                    var_value_Jiaming.setAttribute("style", "width:100px; height:auto");
+                    var_value_Jiaming.setAttribute("class", "border border-dark");
+
+                    variables_Jiaming[variableName_Jiaming] = var_value_Jiaming;
+                }
+
+                // ------ 北大武 -----
+                var numVariables = 20;
+                var variables_beidawu = {};
+
+
+                for (i = 1; i <= numVariables; i++) {
+                    let variableName_beidawu = 'var_beidawu_' + i;
+                    let var_value_beidawu = document.createElement("img");
+                    var_value_beidawu.src = "./img/mountain/北大武_1.jpeg";
+                    var_value_beidawu.setAttribute("class", "img-fluid");
+                    var_value_beidawu.setAttribute("style", "width:100px; height:auto");
+                    var_value_beidawu.setAttribute("class", "border border-dark");
+
+                    variables_beidawu[variableName_beidawu] = var_value_beidawu;
+                }
+                    
                 
 
 
@@ -334,51 +337,40 @@
                         jou_id_test++;
                     })
 
-                    // 將圖片加入其中.
-                    if (document.getElementById("name_1").innerHTML == " 大霸尖山 "){
-                            var test = document.getElementById("img_1");
-                            test.appendChild(img);
-                        }else if (document.getElementById("name_1").innerHTML == " 玉山主峰 "){
-                            var test_1 = document.getElementById("img_1");
-                            test_1.appendChild(img_1);
-                        }else if (document.getElementById("name_1").innerHTML == " 奇萊南華 "){
-                            var test_2 = document.getElementById("img_1");
-                            test_2.appendChild(img_2);
-                        }else if (document.getElementById("name_1").innerHTML == " 雪山主峰 "){
-                            var test_3 = document.getElementById("img_1");
-                            test_3.appendChild(img_3);
-                        }else if (document.getElementById("name_1").innerHTML == " 嘉明湖 "){
-                            var test_4 = document.getElementById("img_1");
-                            test_4.appendChild(img_4);
-                        }else if (document.getElementById("name_1").innerHTML == " 北大武山 "){
-                            var test_5 = document.getElementById("img_1");
-                            test_5.appendChild(img_5);
+                    // ----- 名字對照表 -----
+                    // 玉山主峰 = Yushan
+                    // 奇萊南華 = Qilai
+                    // 北大武山 = beidawu
+                    // 雪山主峰 = snow
+                    // 大霸尖山 = Dabajianshan
+                    // 嘉明湖 = Jiaming
+
+                    // 使用 for 迴圈將資料加入其中
+                    for (i = 1; i < 20; i++){
+                        
+                        if (document.getElementById(`name_${i}`).innerHTML == " 大霸尖山 "){
+                            var test = document.getElementById(`img_${i}`);
+                            test.appendChild(variables_Dabajianshan[`var_Dabajianshan_${i}`]);
+                        }else if (document.getElementById(`name_${i}`).innerHTML == " 玉山主峰 "){
+                            var test_1 = document.getElementById(`img_${i}`);
+                            test_1.appendChild(variables_Yushan[`var_Yushan_${i}`]);
+                        }else if (document.getElementById(`name_${i}`).innerHTML == " 奇萊南華 "){
+                            var test_2 = document.getElementById(`img_${i}`);
+                            test_2.appendChild(variables_Qilai[`var_Qilai_${i}`]);
+                        }else if (document.getElementById(`name_${i}`).innerHTML == " 雪山主峰 "){
+                            var test_3 = document.getElementById(`img_${i}`);
+                            test_3.appendChild(variables_snow[`var_snow_${i}`]);
+                        }else if (document.getElementById(`name_${i}`).innerHTML == " 嘉明湖 "){
+                            var test_4 = document.getElementById(`img_${i}`);
+                            test_4.appendChild(variables_Jiaming[`var_Jiaming_${i}`]);
+                        }else if (document.getElementById(`name_${i}`).innerHTML == " 北大武山 "){
+                            var test_5 = document.getElementById(`img_${i}`);
+                            test_5.appendChild(variables_beidawu[`var_beidawu_${i}`]);
                         }else {
                             console.log("我不知道");
                         }
 
-                        // 將圖片加入其中.
-                        if (document.getElementById("name_2").innerHTML == " 大霸尖山 "){
-                            var test_11 = document.getElementById("img_2");
-                            test_11.appendChild(img6);
-                        }else if (document.getElementById("name_2").innerHTML == " 玉山主峰 "){
-                            var test_6 = document.getElementById("img_2");
-                            test_6.appendChild(img7);
-                        }else if (document.getElementById("name_2").innerHTML == " 奇萊南華 "){
-                            var test_7 = document.getElementById("img_2");
-                            test_7.appendChild(img8);
-                        }else if (document.getElementById("name_2").innerHTML == " 雪山主峰 "){
-                            var test_8 = document.getElementById("img_2");
-                            test_8.appendChild(img9);
-                        }else if (document.getElementById("name_2").innerHTML == " 嘉明湖 "){
-                            var test_9 = document.getElementById("img_2");
-                            test_9.appendChild(img10);
-                        }else if (document.getElementById("name_2").innerHTML == " 北大武山 "){
-                            var test_10 = document.getElementById("img_2");
-                            test_10.appendChild(img11);
-                        }else {
-                            console.log("不知道喔");
-                        }
+                    }
 
 
 
