@@ -212,40 +212,6 @@
 </footer>
 
 <script>
-    // // 檢查是否圖像在視窗內
-    // function isElementInViewport(el) {
-    //     var rect = el.getBoundingClientRect();
-    //     return (
-    //         rect.top >= 0 &&
-    //         rect.left >= 0 &&
-    //         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    //         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    //     );
-
-    // }
-
-    // console.log(isElementInViewport());
-
-
-    // // 加載圖像
-    // function loadImages() {
-    //     var images = document.querySelectorAll('img[data-src]');
-    //     images.forEach(function(img) {
-    //         if (isElementInViewport(img)) {
-    //         img.setAttribute('src', img.getAttribute('data-src'));
-    //         img.style.height = 'auto';
-    //         }
-    //     });
-    //     console.log(images);
-    // }
-
-    // // 加載初始可見圖像
-    // loadImages();
-
-    // // 監聽滾動事件
-    // window.addEventListener('scroll', loadImages);
-
-
     // 物件下拉動畫
     function isEventInWindow(){
         var dom = document.querySelector("lazyIn");
@@ -338,30 +304,6 @@
         };
     };
     window.addEventListener("scroll", throttle(lazyload, 100, 500));
-
-
-
-
-    // document.documentElement.clientHeight
-    // window.innerHeight;
-
-    // document.addEventListener("scroll", update);
-
-    // update();
-
-    
-    // window.addEventListener ("scroll", () => {
-
-        
-
-    // })
-
-    // updateSize();
-    // window.addEventListener("resize", updateSize);
-
-    // const el = document.querySelector('lazy-img');
-    // const observer = lozad(el); // passing a `NodeList` (e.g. `document.querySelectorAll()`) is also valid
-    // observer.observe();
 </script>
 </body>
 </html>

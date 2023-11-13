@@ -308,7 +308,7 @@
                             
                         </tbody>
                     </table>
-                    <button class="btn w-100 text-white" style="background-color: var(--secondary-color);">前往結賬</button>
+                    <button class="btn w-100 text-white" style="background-color: var(--secondary-color);"><a class="text-white" href="cus_order.html">前往結賬</a></button>
 
                     <br><br>
                     <table class="table table-striped">
@@ -384,6 +384,20 @@
                 mountain_MySQL = JSON.parse(e);
                 refreshNewUI();
 
+                // ----- 將總計資料呈現 -----
+                // 獲取物件長度
+                var count = Object.keys(mountain_MySQL).length;
+
+                // 利用 for 迴圈 加入所有的數值
+                var jou_total_amount = 0
+                for (i = 0; i <= count - 1; i++) {
+                    jou_total_amount += parseInt(mountain_MySQL[i].journey_total);
+                }
+                console.log(jou_total_amount);
+
+                var $TOTAL_MONEY = $(`<p class="text-center">${jou_total_amount}</p>`);
+                $TOTAL_MONEY.appendTo("#total_money");            
+                
                 // console.log(e) // [{"journey_id":1,"journey_name":"北大武三天兩夜","journey_leader_name":"Krist","journey_leader_phone":"0975870720","journey_start_data":"2023-05-20T16:00:00.000Z","journey_end_data":"2023-05-22T16:00:00.000Z","journey_num":"1","journey_p
             })
 
@@ -519,8 +533,6 @@
                     })
                 })
             })
-
-            console.log(Moun_total);
         })
 
 
