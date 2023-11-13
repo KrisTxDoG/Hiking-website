@@ -3,20 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krist PorjectA</title>
     <!-- Bootstrap -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/bootstrap-icons.css" rel="stylesheet">
-    <link href="../css/tooplate-clean-work.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../js/navbar.js">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/tooplate-clean-work.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./js/navbar.js">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <title>Document</title>
+    <title>Award</title>
+    <style>
+      body {
+        height: 1000vh;
+        margin: 0;
+        padding: 0;
+      }
+
+      .box {
+        margin-left: 950px;
+        position: relative; 
+        top: 150px;
+        right: 0px;
+        opacity: 0;
+        transition: 1s ease-in-out;
+      }
+    </style>
 </head>
 <body>
     <nav id="navBarRun" class="navbar navbar-expand-lg navbar-adjust" style="width:100%; background: var(--secondary-color); top:0px !important;">
@@ -69,30 +82,30 @@
     </div>
     </nav>
 
-    <section>
+    <section class="">
         <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-wrap= "true">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="3000">
-                <img src="../img/gift/gift_1.jpg" class="d-block w-100 img-height-adjust" alt="...">
+            <div class="carousel-inner" style="height:500px !important;">
+              <div class="carousel-item active position-absolute" style="top: -200px;" data-bs-interval="3000">
+                <img src="../img/gift/gift_1.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                   <h5 class="label-white">玉山國家公園</h5>
                   <p class="label-white">Some representative placeholder content for the first slide.</p>
                 </div>
               </div>
-              <div class="carousel-item" data-bs-interval="3000">
-                <img src="../img/gift/gift_2.jpg" class="d-block w-100 img-height-adjust" alt="...">
+              <div class="carousel-item position-absolute" style="top: -200px;" data-bs-interval="3000">
+                <img src="../img/gift/gift_2.jpg" class="d-block w-100"  alt="...">
                 <div class="carousel-caption d-none d-md-block">
                   <h5 class="label-white">雪霸國家公園</h5>
                   <p class="label-white">Some representative placeholder content for the second slide.</p>
                 </div>
               </div>
-              <div class="carousel-item" data-bs-interval="3000">
-                <img src="../img/gift/gift_3.jpg" class="d-block w-100 img-height-adjust" alt="...">
+              <div class="carousel-item position-absolute" style="top: -300px;" data-bs-interval="3000">
+                <img src="../img/gift/gift_3.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                   <h5 class="label-white">太魯閣國家公園</h5>
                   <p class="label-white">Some representative placeholder content for the third slide.</p>
@@ -108,8 +121,79 @@
               <span class="visually-hidden">Next</span>
             </button>
           </div>
+
+          <div>
+            <div>
+              <div class="box" id ="animatedBox"><img src="./img/gift/gift_drop_down.png" class="img-fluid" style="width: 500px; height: 500px;" alt=""></div>
+            </div>
+          </div>
+
+          <!-- 製作翻牌效果 -->
+          <h2 class="text-center">消費輕鬆賺</h2>
+          <ul class="d-flex align-content-between justify-content-between m-5">
+            <li class="" style="display:inline">
+              <div><p>STEP 1</p>
+                <h5>首次綁定</h5>
+              </div>
+              <div>
+                <h5>OPEN POINT 會員</h5>
+              </div>
+          </li>
+            <li class="" style="display:inline">
+              <div><p>STEP 1</p>
+                <h5>首次綁定</h5>
+              </div>
+              <div>
+                <h5>OPEN POINT 會員</h5>
+              </div>
+            </li>
+            <li class="" style="display:inline">
+              <div><p>STEP 1</p>
+                <h5>首次綁定</h5>
+              </div>
+              <div>
+                <h5>OPEN POINT 會員</h5>
+              </div></li>
+            <li class="" style="display:inline"><div>
+              <p>STEP 1</p>
+              <h5>首次綁定</h5>
+            </div>
+            <div>
+              <h5>OPEN POINT 會員</h5>
+            </div></li>
+          </ul>
     </section>
 
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.backstretch.min.js"></script>
+    <script src="js/counter.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/animated-headline.js"></script>
+    <script src="js/custom.js"></script>
     
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        window.addEventListener("scroll", function() {
+          var animatedBox = document.getElementById("animatedBox");
+          var scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+
+          console.log(scrollPosition);
+          if(scrollPosition > 250) {
+            // animatedBox.style.position = "fixed";
+            animatedBox.style.right = "0px";
+            animatedBox.style.opacity = "1";
+          }else{
+            // animatedBox.style.position = "absolute";
+            animatedBox.style.right = "-200px";
+            animatedBox.style.opacity = "0";
+          }
+        })
+      })
+    </script>
 </body>
 </html>
