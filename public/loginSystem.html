@@ -134,22 +134,25 @@
 
                 // login_MySQL[0].login_password > cysh110254
                 // login_MySQL[0].login_account > cysh110254@gmail.com
-                if ($("#exampleInputEmail").val() == login_MySQL[0].login_account && $("#exampleInputPassword").val() == login_MySQL[0].login_password) {
-                        alert("答對了喔QQQ");
+
+                for (i = 0; i < 10; i++) {
+                    if ($("#exampleInputEmail").val() == login_MySQL[i].login_account && $("#exampleInputPassword").val() == login_MySQL[i].login_password) {
+                        alert(`歡迎${login_MySQL[i].login_name}`);
 
                         // 等待所有頁面完成後再進行跳轉
                         $(function(){
                             window.location.replace("http://localhost:5544/index.html?");
-                        })
-                    }else {
+                        });
+
+                        break;
+                    }else if ($("#exampleInputEmail").val() != login_MySQL[i].login_account || $("#exampleInputPassword").val() != login_MySQL[i].login_password) {
+                        continue;
                         alert("請輸入正確的帳號和密碼");
                     }
-                })
-
                 
-                
-    
+                }             
             })
+        })
 
 
 
