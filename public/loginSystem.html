@@ -89,11 +89,11 @@
                     <form  action="">
                         <div class="form-group">
                             <label for="exampleInputEmail1" class="form-label">會員帳號</label>
-                            <input class="form-control" type="text" id="exampleInputEmail1">
+                            <input class="form-control" type="text" id="exampleInputEmail">
                             <br>
                             <label for="exampleInputEmail2" class="form-label">會員密碼</label>
-                            <input class="form-control" type="text" id="exampleInputEmail2">
-                            <button class="btn text-white text-center align-items-center mt-3" style="width: 380px !important; background-color: var(--link-hover-color) !important">
+                            <input class="form-control" type="text" id="exampleInputPassword">
+                            <button class="btn text-white text-center align-items-center mt-3" style="width: 380px !important; background-color: var(--link-hover-color) !important" id="login_button">
                                 登入
                             </button>
                         </div>
@@ -103,6 +103,70 @@
             </div>
         </div>
     </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(function(){
+            
+            var account_number = [
+
+                {
+                    login_name: "蔡硯丞",
+                    login_account: "cysh110254@gmail.com",
+                    login_password: "cysh110254"
+                },
+                {
+                    login_name: "蔡硯丞",
+                    login_account: "cysh110254@gmail.com",
+                    login_password: "cysh110254"
+                }
+            ];
+
+
+            $.get("home/login", function(e) {
+                login_MySQL = JSON.parse(e);
+                console.log(login_MySQL);
+                refreshUI();
+
+                
+                $("#login_button").click(function() {
+
+                // login_MySQL[0].login_password > cysh110254
+                // login_MySQL[0].login_account > cysh110254@gmail.com
+                if ($("#exampleInputEmail").val() == login_MySQL[0].login_account && $("#exampleInputPassword").val() == login_MySQL[0].login_password) {
+                        alert("答對了喔QQQ");
+
+                        // 等待所有頁面完成後再進行跳轉
+                        $(function(){
+                            window.location.replace("http://localhost:5544/index.html?");
+                        })
+                    }else {
+                        alert("答錯了");
+                    }
+                })
+
+                
+                
+    
+            })
+
+
+
+            function refreshUI() {
+                $.each(login_MySQL, function(key, obj) {
+                    var login_name = obj.login_name;
+                    var login_account = obj.login_account;
+                    var login_password = obj.login_password;
+
+                    var $SHOW = $(`<p class="text-center"> ${login_name}</p>`);
+                    $SHOW.appendTo("#test");
+                })
+            }
+
+        })  
+
+    </script>   
 
 </body>
 </html>

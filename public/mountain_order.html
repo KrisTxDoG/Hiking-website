@@ -353,8 +353,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
 
-
-
         $(function() {
 
             var mountain = 
@@ -391,140 +389,138 @@
 
                 
 
-                var jou_index = 1;
-                function refreshNewUI() {
-                    $("#latestNews").empty();
-
-                    $.each(mountain_MySQL, function(key, obj) {
-                        var jou_name = obj.journey_name;
-                        var jou_perPrice = obj.journey_perPrice;
-                        var jou_num = obj.journey_num;
-                        var jou_total = jou_perPrice * parseInt(jou_num);
-                        var jou_leader = obj.journey_leader_name;
-                        var jou_ID = obj.journey_Id;
-                    
+            var jou_index = 1;
+            function refreshNewUI() {
+                $.each(mountain_MySQL, function(key, obj) {
+                    var jou_name = obj.journey_name;
+                    var jou_perPrice = obj.journey_perPrice;
+                    var jou_num = obj.journey_num;
+                    var jou_total = jou_perPrice * parseInt(jou_num);
+                    var jou_leader = obj.journey_leader_name;
+                    var jou_ID = obj.journey_Id;
+                
 
 
-                        // 將資料加入到 HTML 當中
-                        var $Mn = $(`<p class="text-center"> ${jou_name} </p>`);
-                        $Mn.appendTo("#mountain_name");
+                    // 將資料加入到 HTML 當中
+                    var $Mn = $(`<p class="text-center"> ${jou_name} </p>`);
+                    $Mn.appendTo("#mountain_name");
 
-                        var $Mu = $(`<p class="text-center"> ${jou_num} </p>`);
-                        $Mu.appendTo("#mountain_num");
+                    var $Mu = $(`<p class="text-center"> ${jou_num} </p>`);
+                    $Mu.appendTo("#mountain_num");
 
-                        var $Mt = $(`<p class="text-center"> ${jou_perPrice} </p>`);
-                        $Mt.appendTo("#mountain_per_QQQ");
+                    var $Mt = $(`<p class="text-center"> ${jou_perPrice} </p>`);
+                    $Mt.appendTo("#mountain_per_QQQ");
 
-                        var $Ml = $(`<p class="text-center"> ${jou_leader} </p>`);
-                        $Ml.appendTo("#mountain_leader");
+                    var $Ml = $(`<p class="text-center"> ${jou_leader} </p>`);
+                    $Ml.appendTo("#mountain_leader");
 
-                        var $Mlt = $(`<p class="text-center"> ${jou_total} </p>`);
-                        $Mlt.appendTo("#mountain_little_total");
+                    var $Mlt = $(`<p class="text-center"> ${jou_total} </p>`);
+                    $Mlt.appendTo("#mountain_little_total");
 
-                        // ----- 刪除鍵 ----- 
-                        // var $M_del = $(`<button class="btn btn-danger"><i class="bi bi-trash"></i></button><br>`);
-                        // $M_del.appendTo(".mountain_del");
+                    // ----- 刪除鍵 ----- 
+                    // var $M_del = $(`<button class="btn btn-danger"><i class="bi bi-trash"></i></button><br>`);
+                    // $M_del.appendTo(".mountain_del");
 
 
-                        // index 呈現在網頁上
-                        var $M_index = $(`<p class="text-center"> ${jou_index} </p>`);
-                        $M_index.appendTo("#mountain_index");
-                        jou_index++;
-                    })
+                    // index 呈現在網頁上
+                    var $M_index = $(`<p class="text-center"> ${jou_index} </p>`);
+                    $M_index.appendTo("#mountain_index");
+                    jou_index++;
+                })
 
 
 
-                    // 設定刪除鍵
-                    $("#mountain_del").click(function() {
-                        $.ajax({
-                            type: "delete",
-                            url : "/home/journey",
-                            data: mountain_MySQL[mountain_MySQL.length -1]
-                        })
-                        .then(function() {
-                            $.get("/home/journey", function(e) {
-                                mountain_MySQL = JSON.parse(e);
-                                refreshNewUI();
-                            })
-                        })
-                    })
-                }
-
-
-
-                // ----- 試試看 點擊按鈕 是否可以執行-----
-                // 新增資料
-                $("#Moun_order").click(function() {
-                    
-                    var perMoney = [];
-                    if($("#Moun_order_name").val() == "北大武山") {
-                        perMoney = 6000;
-                    }else if($("#Moun_order_name").val() == "玉山主峰") {
-                        perMoney = 4000;
-                    }else if($("#Moun_order_name").val() == "雪山主峰") {
-                        perMoney = 7500;
-                    }else if($("#Moun_order_name").val() == "嘉明湖") {
-                        perMoney = 8000;
-                    }else if($("#Moun_order_name").val() == "奇萊南華") {
-                        perMoney = 4500;
-                    }else if($("#Moun_order_name").val() == "大霸尖山") {
-                        perMoney = 5000;
-                    }else {
-                        console.log("不知道");
-                    }
-
-                    // 設定領隊
-                    var leader = [];
-                    if($("#Moun_order_name").val() == "北大武山") {
-                        leader = "Krist";
-                    }else if($("#Moun_order_name").val() == "玉山主峰") {
-                        leader = "Sofiya";
-                    }else if($("#Moun_order_name").val() == "雪山主峰") {
-                        leader = "Hello";
-                    }else if($("#Moun_order_name").val() == "嘉明湖") {
-                        leader = "Bill";
-                    }else if($("#Moun_order_name").val() == "奇萊南華") {
-                        leader = "Mariya";
-                    }else if($("#Moun_order_name").val() == "大霸尖山") {
-                        leader = "Jerry";
-                    }else {
-                        console.log("不知道");
-                    }
-
-                    // 必須符合 MySQL 當中的格式
-                    var Moun_order = {
-                        journey_name: $("#Moun_order_name").val(), 
-                        journey_leader_name: leader,
-                        journey_leader_phone: "0975870720",
-                        journey_start_data: "2023-05-21",
-                        journey_end_data: "2023-05-23",
-                        journey_num: $("#Moun_order_num").val(),
-                        journey_perPrice: perMoney,
-                        journey_total: perMoney * $("#Moun_order_num").val()
-                    };
-
-                    // 透過傳輸
+                // 設定刪除鍵
+                $("#mountain_del").click(function() {
                     $.ajax({
-                        type: "post",
-                        url: "/home/journey",
-                        data:Moun_order,
-                        dataType:"text",
-                        success: function(happy) {
-                            $("#test").text("happy");
-                        }
+                        type: "delete",
+                        url : "/home/journey",
+                        data: mountain_MySQL[mountain_MySQL.length -1]
                     })
-
-                    // 重新取回資料
-                    .then(function(e) {
+                    .then(function() {
                         $.get("/home/journey", function(e) {
-                            // JOSN 字串轉換為數值或物件
-                            mountain.JSON.parse(e);
+                            mountain_MySQL = JSON.parse(e);
                             refreshNewUI();
                         })
                     })
                 })
+            }
 
-                console.log(Moun_total);
+
+
+            // ----- 試試看 點擊按鈕 是否可以執行-----
+            // 新增資料
+            $("#Moun_order").click(function() {
+                
+                var perMoney = [];
+                if($("#Moun_order_name").val() == "北大武山") {
+                    perMoney = 6000;
+                }else if($("#Moun_order_name").val() == "玉山主峰") {
+                    perMoney = 4000;
+                }else if($("#Moun_order_name").val() == "雪山主峰") {
+                    perMoney = 7500;
+                }else if($("#Moun_order_name").val() == "嘉明湖") {
+                    perMoney = 8000;
+                }else if($("#Moun_order_name").val() == "奇萊南華") {
+                    perMoney = 4500;
+                }else if($("#Moun_order_name").val() == "大霸尖山") {
+                    perMoney = 5000;
+                }else {
+                    console.log("不知道");
+                }
+
+                // 設定領隊
+                var leader = [];
+                if($("#Moun_order_name").val() == "北大武山") {
+                    leader = "Krist";
+                }else if($("#Moun_order_name").val() == "玉山主峰") {
+                    leader = "Sofiya";
+                }else if($("#Moun_order_name").val() == "雪山主峰") {
+                    leader = "Hello";
+                }else if($("#Moun_order_name").val() == "嘉明湖") {
+                    leader = "Bill";
+                }else if($("#Moun_order_name").val() == "奇萊南華") {
+                    leader = "Mariya";
+                }else if($("#Moun_order_name").val() == "大霸尖山") {
+                    leader = "Jerry";
+                }else {
+                    console.log("不知道");
+                }
+
+                // 必須符合 MySQL 當中的格式
+                var Moun_order = {
+                    journey_name: $("#Moun_order_name").val(), 
+                    journey_leader_name: leader,
+                    journey_leader_phone: "0975870720",
+                    journey_start_data: "2023-05-21",
+                    journey_end_data: "2023-05-23",
+                    journey_num: $("#Moun_order_num").val(),
+                    journey_perPrice: perMoney,
+                    journey_total: perMoney * $("#Moun_order_num").val()
+                };
+
+                // 透過傳輸
+                $.ajax({
+                    type: "post",
+                    url: "/home/journey",
+                    data:Moun_order,
+                    dataType:"text",
+                    success: function(happy) {
+                        $("#test").text("happy");
+                    }
+                })
+
+                // 重新取回資料
+                .then(function(e) {
+                    $.get("/home/journey", function(e) {
+                        // JOSN 字串轉換為數值或物件
+                        mountain.JSON.parse(e);
+                        refreshNewUI();
+                    })
+                })
+            })
+
+            console.log(Moun_total);
         })
 
 

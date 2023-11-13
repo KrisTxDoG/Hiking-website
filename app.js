@@ -126,3 +126,24 @@ app.delete("/home/journey", function (request, response) {
 
 
 
+// get data
+app.get("/home/login", function (request, response) {
+
+	connection.query('select * from login', 
+		'',
+		function(err, rows) {
+			if (err)	{
+				console.log(JSON.stringify(err));
+				return;
+			}
+			
+			response.send(JSON.stringify(rows));
+		}
+	);
+    
+})
+
+
+
+
+
