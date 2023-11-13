@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/order.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Bootstrap -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/tooplate-clean-work.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./js/navbar.js">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- chart.js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+    <title>goodPage</title>
+    <title>側邊動畫效果</title>
+</head>
+<body>
+    <header class="header">
+        <nav id="navBarRun" class="navbar navbar-expand-lg navbar-adjust" style="width:100%; background: var(--secondary-color); top:0px !important;">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                <img class="img-size" src="./img/登山logo.webp" alt="Brand">
+                <span class="ms-3">
+                    <strong>登 山  &nbsp; &nbsp; &nbsp;  趣</strong>
+                </span>
+     
+                <!-- 製作按鈕 -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ms-auto" id="navbarNav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">首頁</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="good.html">
+                                百岳介紹
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="equipment.html">裝備介紹
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                登山須知
+                            </a>
+                        </li>
+                        <!-- 會員登入系統 -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">會員系統</a>
+                            <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                                <li><a class="dropdown-item" href="loginSystem.html">會員登入</a></li>
+                                <li><a class="dropdown-item" href="loginSystem.html">會員等級</a></li>
+                                <li><a class="dropdown-item" href="cus_order.html">訂單查詢</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a class="nav-link custom-btn custom-border-btn custom-btn-white btn" href="#toBalance">開始</a>
+                        </li>
+                    </ul>
+                </div>
+     
+            </a>
+        </div>
+        </nav>
+    </header>
+    <div class="left-navbar">
+        <nav class="nav">
+                <br><br>
+                <div>
+                    <!-- <a href="" class="nav-logo">
+                        <i class='bx bxs-tv nav-logo-icon'></i>
+                        <span class="nav-logo-name">網站 Logo</span>
+                    </a> -->
+                    <div class="nav-list">
+                        <a href="" class="nav-link active">
+                            <i class='bx bxs-home nav-icon' ></i>
+                            <span class="nav-name"></span>
+                        </a>
+
+                        <a href="" class="nav-link">
+                            <i class='bx bxs-user-rectangle nav-icon'></i>
+                            <span class="nav-name text-white">訂 單</span>
+                        </a>
+
+                        <a href="" class="nav-link">
+                            <i class='bx bxs-message-dots nav-icon' ></i>
+                            <span class="nav-name text-white">獎 勵</span>
+                        </a>
+
+                        <a href="" class="nav-link">
+                            <i class='bx bx-bookmark nav-icon' ></i>
+                            <span class="nav-name text-white">報 表</span>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <a href="" class="nav-link">
+                        <i class='bx bxs-log-in-circle nav-icon' ></i>
+                        <span class="nav-name text-white">退 出 登 入</span>
+                    </a>
+                </div>
+        </nav>
+    </div>
+    <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
+    <div>
+        <div class="container">
+            <div class="page-header">
+                <h1 class="m-0">財務報表</h1>
+            </div>    
+            <div class="row">
+                <div class="col-sm-6">
+                    <!-- 統計圖畫在這裡 -->
+                    <canvas id="chartCanvas"></canvas>
+                </div>
+
+                <br>
+
+                <div class="col-sm-6">
+                    <!-- 統計圖畫在這裡 -->
+                    <canvas id="chartCanvas_circle"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section>
+    </section>
+
+    <script>
+        $(document).ready(function () {
+
+        var dataList = [];
+        var labelList = [];
+        // for (let i = 0; i <= 12; i++) {
+        //     let dataItem = Math.floor(Math.random() * 10000);
+        //     labelList.push(i);
+        //     dataList.push(dataItem);
+        // }
+        labelList = [1,2,3,4,5,6,7,8,9,10,11,12];
+
+        dataList = [5400, 6400, 6100, 5500, 7500, 8900, 10200, 12000, 9600, 10000, 7200, 4000];
+        dataList_1 = [5400, 6400, 6100, 5500, 7500, 8900, 10200, 12000, 9600, 10000, 7200, 4000];
+
+        
+
+        dataList.forEach(function(item, index, arr){
+            arr[index] = item * 10;
+        });
+
+        dataList_1.forEach(function(item, index, arr){
+            arr[index] = item * 8;
+        })
+
+        console.log(dataList);
+        console.log(dataList_1);
+        
+
+
+        // alert(dataList);
+
+        // var series2DataList = [];
+        // for (let i = 1; i <= 12; i++) {
+        //     let dataItem = Math.floor(Math.random() * 10000);
+        //     series2DataList.push(dataItem);
+        // }
+
+        // for (i=0; i<=dataList.length; i++) {
+        //     var series2DataList = [];
+        //     series2DataList =  series2DataList.append(dataList[i]);
+        // }
+
+        // var series2DataList = [];
+        // series2DataList = dataList * 0.8;
+
+        // console.log(series2DataList);
+
+        // Lab 練習的程式寫在這裡
+        var ctx = document.getElementById("chartCanvas");
+        var labChart = new Chart(ctx,{
+            type: "line",
+            data: {
+                labels: labelList,
+                datasets: [
+                    {
+                        label: "去年銷售額",
+                        data: dataList,
+                        fill: false,
+                        // 著色:
+                        backgroundColor: "#12486B",
+                        borderColor: "#12486B",
+                        borderWidth: 1
+                    },
+                    {
+                        label: "今年銷售額",
+                        data: dataList_1,
+                        fill: false,
+                        // 著色:
+                        backgroundColor: "#419197",
+                        borderColor: "#419197",
+                        borderWidth: 1
+                    }
+                ]
+                }
+            })
+        })
+
+        // 圓餅圖
+        $(document).ready(function () {
+
+        var cityPopulationList = [ 3800, 2570, 2374, 2106, 1859];
+        var cityNameList = [ "Tokyo", "Delhi", "Shanghai", "Sao Paulo", "New York"];
+
+        // Lab 練習的程式寫在這裡
+
+        var ctx = document.getElementById("chartCanvas_circle");
+        var pieChart = new Chart(ctx, {
+            type: "pie",
+            data: {
+                labels: cityNameList,
+                datasets: [
+                    {
+                        data: cityPopulationList,
+                        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"]
+                    }
+                ]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Population'
+                }
+            }
+        })
+})
+
+        
+    </script>
+</body>
+</html>

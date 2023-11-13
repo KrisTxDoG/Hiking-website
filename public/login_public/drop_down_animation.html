@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Scroll Animation</title>
+  <style>
+    body {
+        height: 150vh; /* 增加頁面高度以便滑動 */
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .box {
+        width: 200px;
+        height: 100px;
+        background-color: #3498db;
+        color: #fff;
+        text-align: center;
+        line-height: 100px;
+        font-size: 20px;
+        position: fixed; /* 固定在瀏覽器窗口 */
+        top: 50px;
+        right: -200px; /* 初始位置在螢幕右邊，等待進入畫面 */
+        opacity: 0; /* 初始透明度為0，隱藏物件 */
+        transition: 2s ease-in-out; /* 添加過渡效果 */
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="box" id="animatedBox">出現的物件</div>
+
+  <script src="script.js"></script>
+
+  <script>
+    // 當文件載入完成後執行
+    document.addEventListener("DOMContentLoaded", function() {
+    // 監聽滾動事件
+    window.addEventListener("scroll", function() {
+    // 取得物件
+    var animatedBox = document.getElementById("animatedBox");
+    
+    // 取得視窗的垂直滾動位置
+    var scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+
+    // 如果滾動位置超過一定值，就顯示物件
+    if (scrollPosition > 100) {
+      animatedBox.style.right = "50px"; // 設定物件的最終位置
+      animatedBox.style.opacity = "1"; // 顯示物件
+    } else {
+      animatedBox.style.right = "-200px"; // 隱藏物件
+      animatedBox.style.opacity = "0"; // 設定透明度為0
+    }
+  });
+});
+
+  </script>
+</body>
+</html>
