@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap-icons.css" rel="stylesheet">
+        <link href="css/tooplate-clean-work.css" rel="stylesheet">
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="./js/jquery.min.js">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body>
+    <nav id="navBarRun" class="navbar navbar-expand-lg navbar-adjust" style="width:100%; background: var(--secondary-color); top:0px !important;">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+            <img class="img-size" src="../img/登山logo.webp" alt="Brand">
+            <span class="ms-3">
+                <strong>登 山  &nbsp; &nbsp; &nbsp;  趣</strong>
+            </span>
+ 
+            <!-- 製作按鈕 -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ms-auto" id="navbarNav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="good.html">
+                            百岳介紹
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="equipment.html">裝備介紹
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            登山須知
+                        </a>
+                    </li>
+                    <!-- 會員登入系統 -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" href="#">會員系統</a>
+                        <ul class="dropdown-menu dropdown-menu-light" aria-labelledby="navbarLightDropdownMenuLink">
+                            <li><a class="dropdown-item" href="loginSystem.html">會員登入</a></li>
+                            <li><a class="dropdown-item" href="">會員等級</a></li>
+                            <li><a class="dropdown-item" href="cus_order.html">訂單查詢</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item ms-3">
+                        <a class="nav-link custom-btn custom-border-btn custom-btn-white btn" href="#toBalance">開始</a>
+                    </li>
+                </ul>
+            </div>
+ 
+        </a>
+    </div>
+    </nav>
+
+
+
+    <br><br><br><br><br>
+
+
+    
+    <!-- 樣式板模 -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <form action="" cellpadding="8" style="line-height:25px;">
+ 
+                        <table class="table table-striped" style="line-height:100px !important;">
+                            <thead>
+                              <tr>
+                                <th scope="col"><p class="text-center">編號</p></th>
+                                <th scope="col"><p class="text-center">圖片</p></th>
+                                <th scope="col"><p class="text-center">領隊</p></th>
+                                <th scope="col"><p class="text-center">商品</p></th>
+                                <th scope="col"><p class="text-center">價格</p></th>
+                                <th scope="col"><p class="text-center">數量</p></th>
+                                <th scope="col"><p class="text-center">小記</p></th>
+                                <!-- <th scope="col"><p class="text-center">刪除</p></th> -->
+                                <!-- <th scope="col"><p class="text-center">總計</p></th> -->
+                              </tr>
+                            </thead>
+    
+                            <tbody >
+                              <tr>
+                                <th scope="col" id="mountain_index"></th>
+
+                                <td>
+                                    <p class="text-center mountain_img" id="mountain_img"></p>
+                                </td>
+    
+                                <td >
+                                    <p class="text-center" id="mountain_leader"></p>
+                                </td>
+                           
+                                <td >
+                                    <p class="text-center" id="mountain_name"></p>
+                                </td>
+                            
+                                <td >
+                                    <p class="text-center" id="mountain_per_QQQ"></p>
+                                </td>
+                             
+                                <td >
+                                    <p class="text-center" id="mountain_num"></p>
+                                </td>
+                             
+                                <td>
+                                    <p class="text-center" class="MoneyQQQ" id="mountain_little_total"></p>
+                                </td>
+                            
+                                <!-- 刪除鍵 -->
+                                <!-- <td>
+                                    <div class="text-center mountain_del"></div>
+                                </td> -->
+    
+                                <!-- <td ><p class="text-center" id="total_money"></p></td> -->
+                
+                              </tr>
+                            
+                            </tbody>
+                        </table>
+                    </form>   
+                </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+
+
+        $(function() {
+
+            var mountain = 
+            [
+                {
+                    journey_name: "北大武三天兩夜", 
+                    journey_name: "Krist",
+                    journey_name: "0975870720",
+                    journey_start_data: "2023-05-21",
+                    journey_end_data: "2023-05-23",
+                    journey_num: 1,
+                    journey_perPrice: 0,
+                    journey_total: 0
+                },
+                {
+                    journey_name: "北大武三天兩夜", 
+                    journey_name: "Krist",
+                    journey_name: "0975870720",
+                    journey_start_data: "2023-05-21",
+                    journey_end_data: "2023-05-23",
+                    journey_num: 1,
+                    journey_perPrice: 0,
+                    journey_total: 0
+                }
+            ];
+
+
+            $.get("/home/journey", function(e) {
+                mountain_MySQL = JSON.parse(e);
+                refreshNewUI();
+
+                // console.log(e) // [{"journey_id":1,"journey_name":"北大武三天兩夜","journey_leader_name":"Krist","journey_leader_phone":"0975870720","journey_start_data":"2023-05-20T16:00:00.000Z","journey_end_data":"2023-05-22T16:00:00.000Z","journey_num":"1","journey_p
+            })
+
+                
+                // 計時的變數
+                var jou_index = 1;
+                var jou_id_test = 1;
+                jou_id_test.toString();
+
+
+                // ----- 大霸尖山迴圈 -----
+                var numVariables = 20;
+                var variables_Dabajianshan = {};
+
+                for (i = 1; i <= numVariables; i++) {
+                    var variableName_Dabajianshan = 'var_Dabajianshan_' + i;
+                    var var_value_Dabajianshan = document.createElement("img");
+                    var_value_Dabajianshan.src = "./img/mountain/大霸尖山_1.jpeg";
+                    var_value_Dabajianshan.setAttribute("class", "img-fluid");
+                    var_value_Dabajianshan.setAttribute("style", "width:100px; height:auto");
+                    var_value_Dabajianshan.setAttribute("class", "border border-dark");
+
+                    variables_Dabajianshan[variableName_Dabajianshan] = var_value_Dabajianshan;
+                }
+
+
+
+                // ----- 玉山主峰迴圈 -----
+                var numVariables = 20;
+                var variables_Yushan = {};
+
+                for (i = 1; i <= numVariables; i++) {
+                    let variableName_Yushan = 'var_Yushan_' + i;
+                    let var_value_Yushan = document.createElement("img");
+                    var_value_Yushan.src = "./img/mountain/玉山主峰_1.jpeg";
+                    var_value_Yushan.setAttribute("class", "img-fluid");
+                    var_value_Yushan.setAttribute("style", "width:100px; height:auto");
+                    var_value_Yushan.setAttribute("class", "border border-dark");
+
+                    variables_Yushan[variableName_Yushan] = var_value_Yushan;
+                }
+
+
+
+                // ----- 奇萊南華迴圈 ----
+                var numVariables = 20;
+                var variables_Qilai = {};
+
+                for (i = 1; i <= numVariables; i++) {
+                    let variableName_Qilai = 'var_Qilai_' + i;
+                    let var_value_Qilai = document.createElement("img");
+                    var_value_Qilai.src = "./img/mountain/奇萊南華-2.jpeg";
+                    var_value_Qilai.setAttribute("class", "img-fluid");
+                    var_value_Qilai.setAttribute("style", "width:100px; height:auto");
+                    var_value_Qilai.setAttribute("class", "border border-dark");
+
+                    variables_Qilai[variableName_Qilai] = var_value_Qilai;
+                }
+
+
+
+                // ----- 雪山主峰迴圈 ----- 
+                var numVariables = 20;
+                var variables_snow = {};
+
+
+                for (i = 1; i <= numVariables; i++) {
+                    let variableName_snow = 'var_snow_' + i;
+                    let var_value_snow = document.createElement("img");
+                    var_value_snow.src = "./img/mountain/雪山主峰_1.jpeg";
+                    var_value_snow.setAttribute("class", "img-fluid");
+                    var_value_snow.setAttribute("style", "width:100px; height:auto");
+                    var_value_snow.setAttribute("class", "border border-dark");
+
+                    variables_snow[variableName_snow] = var_value_snow;
+                }
+
+
+
+                // ----- 嘉明湖迴圈 -----
+                var numVariables = 20;
+                var variables_Jiaming = {};
+
+
+                for (i = 1; i <= numVariables; i++) {
+                    let variableName_Jiaming = 'var_Jiaming_' + i;
+                    let var_value_Jiaming = document.createElement("img");
+                    var_value_Jiaming.src = "./img/mountain/嘉明湖_1.jpeg";
+                    var_value_Jiaming.setAttribute("class", "img-fluid");
+                    var_value_Jiaming.setAttribute("style", "width:100px; height:auto");
+                    var_value_Jiaming.setAttribute("class", "border border-dark");
+
+                    variables_Jiaming[variableName_Jiaming] = var_value_Jiaming;
+                }
+
+                // ------ 北大武 -----
+                var numVariables = 20;
+                var variables_beidawu = {};
+
+
+                for (i = 1; i <= numVariables; i++) {
+                    let variableName_beidawu = 'var_beidawu_' + i;
+                    let var_value_beidawu = document.createElement("img");
+                    var_value_beidawu.src = "./img/mountain/北大武_1.jpeg";
+                    var_value_beidawu.setAttribute("class", "img-fluid");
+                    var_value_beidawu.setAttribute("style", "width:100px; height:auto");
+                    var_value_beidawu.setAttribute("class", "border border-dark");
+
+                    variables_beidawu[variableName_beidawu] = var_value_beidawu;
+                }
+                    
+                
+
+
+                function refreshNewUI() {
+                    $("#latestNews").empty();
+
+                    $.each(mountain_MySQL, function(key, obj) {
+                        var jou_name = obj.journey_name;
+                        var jou_perPrice = obj.journey_perPrice;
+                        var jou_num = obj.journey_num;
+                        var jou_total = jou_perPrice * parseInt(jou_num);
+                        var jou_leader = obj.journey_leader_name;
+                        var jou_ID = obj.journey_Id;
+                    
+                        
+
+                        // 將資料加入到 HTML 當中
+                        var $Mn = $(`<p class="text-center" id = "name_${jou_id_test}"> ${jou_name} </p>`);
+                        $Mn.appendTo("#mountain_name");
+
+                        var $Mu = $(`<p class="text-center" id = "num_${jou_id_test}"> ${jou_num} </p>`);
+                        $Mu.appendTo("#mountain_num");
+
+                        var $Mt = $(`<p class="text-center" id = "perPrice_${jou_id_test}"> ${jou_perPrice} </p>`);
+                        $Mt.appendTo("#mountain_per_QQQ");
+
+                        var $Ml = $(`<p class="text-center" id = "leader_${jou_id_test}"> ${jou_leader} </p>`);
+                        $Ml.appendTo("#mountain_leader");
+
+                        var $Mlt = $(`<p class="text-center" id = "total_${jou_id_test}"> ${jou_total} </p>`);
+                        $Mlt.appendTo("#mountain_little_total");
+
+                        var $i_don_know = $(`<p class="text-center" id = "img_${jou_id_test}"></p>`);
+                        $i_don_know.appendTo("#mountain_img");
+
+                        console.log($Mn);
+
+                        // ----- 刪除鍵 ----- 
+                        // var $M_del = $(`<button class="btn btn-danger"><i class="bi bi-trash"></i></button><br>`);
+                        // $M_del.appendTo(".mountain_del");
+
+
+                        // index 呈現在網頁上
+                        var $M_index = $(`<p class="text-center"> ${jou_index} </p>`);
+                        $M_index.appendTo("#mountain_index");
+                        jou_index++;
+                        
+
+                        jou_id_test++;
+                    })
+
+                    // ----- 名字對照表 -----
+                    // 玉山主峰 = Yushan
+                    // 奇萊南華 = Qilai
+                    // 北大武山 = beidawu
+                    // 雪山主峰 = snow
+                    // 大霸尖山 = Dabajianshan
+                    // 嘉明湖 = Jiaming
+
+                    // 使用 for 迴圈將資料加入其中
+                    for (i = 1; i < 20; i++){
+                        
+                        if (document.getElementById(`name_${i}`).innerHTML == " 大霸尖山 "){
+                            var test = document.getElementById(`img_${i}`);
+                            test.appendChild(variables_Dabajianshan[`var_Dabajianshan_${i}`]);
+                        }else if (document.getElementById(`name_${i}`).innerHTML == " 玉山主峰 "){
+                            var test_1 = document.getElementById(`img_${i}`);
+                            test_1.appendChild(variables_Yushan[`var_Yushan_${i}`]);
+                        }else if (document.getElementById(`name_${i}`).innerHTML == " 奇萊南華 "){
+                            var test_2 = document.getElementById(`img_${i}`);
+                            test_2.appendChild(variables_Qilai[`var_Qilai_${i}`]);
+                        }else if (document.getElementById(`name_${i}`).innerHTML == " 雪山主峰 "){
+                            var test_3 = document.getElementById(`img_${i}`);
+                            test_3.appendChild(variables_snow[`var_snow_${i}`]);
+                        }else if (document.getElementById(`name_${i}`).innerHTML == " 嘉明湖 "){
+                            var test_4 = document.getElementById(`img_${i}`);
+                            test_4.appendChild(variables_Jiaming[`var_Jiaming_${i}`]);
+                        }else if (document.getElementById(`name_${i}`).innerHTML == " 北大武山 "){
+                            var test_5 = document.getElementById(`img_${i}`);
+                            test_5.appendChild(variables_beidawu[`var_beidawu_${i}`]);
+                        }else {
+                            console.log("我不知道");
+                        }
+
+                    }
+
+
+
+                    // 設定刪除鍵
+                    $("#mountain_del").click(function() {
+                        $.ajax({
+                            type: "delete",
+                            url : "/home/journey",
+                            data: mountain_MySQL[mountain_MySQL.length -1]
+                        })
+                        .then(function() {
+                            $.get("/home/journey", function(e) {
+                                mountain_MySQL = JSON.parse(e);
+                                refreshNewUI();
+                            })
+                        })
+                    })
+                }
+
+
+
+                // ----- 試試看 點擊按鈕 是否可以執行-----
+                // 新增資料
+                $("#Moun_order").click(function() {
+                    
+                    var perMoney = [];
+                    if($("#Moun_order_name").val() == "北大武山") {
+                        perMoney = 6000;
+                    }else if($("#Moun_order_name").val() == "玉山主峰") {
+                        perMoney = 4000;
+                    }else if($("#Moun_order_name").val() == "雪山主峰") {
+                        perMoney = 7500;
+                    }else if($("#Moun_order_name").val() == "嘉明湖") {
+                        perMoney = 8000;
+                    }else if($("#Moun_order_name").val() == "奇萊南華") {
+                        perMoney = 4500;
+                    }else if($("#Moun_order_name").val() == "大霸尖山") {
+                        perMoney = 5000;
+                    }else {
+                        console.log("不知道");
+                    }
+
+                    // 設定領隊
+                    var leader = [];
+                    if($("#Moun_order_name").val() == "北大武山") {
+                        leader = "Krist";
+                    }else if($("#Moun_order_name").val() == "玉山主峰") {
+                        leader = "Sofiya";
+                    }else if($("#Moun_order_name").val() == "雪山主峰") {
+                        leader = "Hello";
+                    }else if($("#Moun_order_name").val() == "嘉明湖") {
+                        leader = "Bill";
+                    }else if($("#Moun_order_name").val() == "奇萊南華") {
+                        leader = "Mariya";
+                    }else if($("#Moun_order_name").val() == "大霸尖山") {
+                        leader = "Jerry";
+                    }else {
+                        console.log("不知道");
+                    }
+
+
+                    // 必須符合 MySQL 當中的格式
+                    var Moun_order = {
+                        journey_name: $("#Moun_order_name").val(), 
+                        journey_leader_name: leader,
+                        journey_leader_phone: "0975870720",
+                        journey_start_data: "2023-05-21",
+                        journey_end_data: "2023-05-23",
+                        journey_num: $("#Moun_order_num").val(),
+                        journey_perPrice: perMoney,
+                        journey_total: perMoney * $("#Moun_order_num").val()
+                    };
+
+                    // 透過傳輸
+                    $.ajax({
+                        type: "post",
+                        url: "/home/journey",
+                        data:Moun_order,
+                        dataType:"text",
+                        success: function(happy) {
+                            $("#test").text("happy");
+                        }
+                    })
+
+                    // 重新取回資料
+                    .then(function(e) {
+                        $.get("/home/journey", function(e) {
+                            // JOSN 字串轉換為數值或物件
+                            mountain.JSON.parse(e);
+                            refreshNewUI();
+                        })
+                    })
+                })
+                console.log(Moun_total);
+        })
+    </script>
+
+    <script>
+    
+        
+    </script>
+    
+</body>
+</html>
