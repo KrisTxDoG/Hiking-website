@@ -144,6 +144,28 @@ app.get("/home/login", function (request, response) {
 })
 
 
+app.post("/home/login", function(request, response){
+
+	connection.query(
+
+		"INSERT INTO login (login_name, login_password, login_account, login_phone) VALUES (?, ?, ?, ?)",
+		[
+			request.body.login_name, 
+			request.body.login_password,
+			request.body.login_account, 
+			request.body.login_phone,
+		],
+		function(error, result) {
+			console.log(result);
+			response.send("OK, row(s) inserted");
+		}
+
+)
+
+}
+
+)
+
 
 
 
