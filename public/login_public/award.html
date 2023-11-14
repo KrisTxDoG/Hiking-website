@@ -22,13 +22,28 @@
       }
 
       .box {
-        margin-left: 950px;
         position: relative; 
-        top: 150px;
+        top: 30px;
         right: 0px;
         opacity: 0;
         transition: 1s ease-in-out;
       }
+
+      .box-flip{
+        /* right: -200px; */
+        position: relative;
+        background-color: var(--secondary-color);
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+        border-radius: 10px;
+      }
+
+      .list-top {
+        position: relative;
+        opacity: 0;
+      }
+      
     </style>
 </head>
 <body>
@@ -91,21 +106,21 @@
             </div>
             <div class="carousel-inner" style="height:500px !important;">
               <div class="carousel-item active position-absolute" style="top: -200px;" data-bs-interval="3000">
-                <img src="../img/gift/gift_1.jpg" class="d-block w-100" alt="...">
+                <img src="./img/gift/mountain_gift_1.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                   <h5 class="label-white">玉山國家公園</h5>
                   <p class="label-white">Some representative placeholder content for the first slide.</p>
                 </div>
               </div>
               <div class="carousel-item position-absolute" style="top: -200px;" data-bs-interval="3000">
-                <img src="../img/gift/gift_2.jpg" class="d-block w-100"  alt="...">
+                <img src="./img/gift/mountain_gift_2.jpg" class="d-block w-100"  alt="...">
                 <div class="carousel-caption d-none d-md-block">
                   <h5 class="label-white">雪霸國家公園</h5>
                   <p class="label-white">Some representative placeholder content for the second slide.</p>
                 </div>
               </div>
               <div class="carousel-item position-absolute" style="top: -300px;" data-bs-interval="3000">
-                <img src="../img/gift/gift_3.jpg" class="d-block w-100" alt="...">
+                <img src="./img/gift/mountain_gift_3.jpg" class="d-block w-100" alt="...">
                 <div class="carousel-caption d-none d-md-block">
                   <h5 class="label-white">太魯閣國家公園</h5>
                   <p class="label-white">Some representative placeholder content for the third slide.</p>
@@ -122,44 +137,72 @@
             </button>
           </div>
 
-          <div>
-            <div>
-              <div class="box" id ="animatedBox"><img src="./img/gift/gift_drop_down.png" class="img-fluid" style="width: 500px; height: 500px;" alt=""></div>
+          <section>
+            <div class="container mt-5">
+              <div class="row">
+                <div class="col text-center "><i class="bi bi-apple"></i><br><a href=""><p>會員好康隨時掌握</p></a></div>
+                <div class="col text-center "><i class="bi bi-balloon-fill"></i><br><a href=""><p>會員回饋</p></a></div>
+                <div class="col text-center "><i class="bi bi-bicycle"></i><br><a href=""><p>哩程兌換</p></a></div>
+                <div class="col text-center "><i class="bi bi-capsule"></i><br><a href=""><p>說明 & 注意事項</p></a></div>
+              </div>
+            </div>
+          </section>
+
+          <hr>
+
+          <br><br><br>
+          <h2 class="text-center">里程換好禮</h2>
+          <!-- 禮物和出現效果  -->
+          <div class="container" >
+            <div class="row">
+              <div class="col-8">
+                <ul class="list-group mt-5">
+                  <li class="list-group-item list-top" id="list-1" style="background-color: #89B9AD; height:100px; border-radius: 10px;"><h3 class="text-center text-white mt-3">下載 登山 趣APP</h3></li>
+                  <br><br><br>
+                  <li class="list-group-item list-top" id="list-2" style="background-color: #89B9AD; height:100px; border-radius: 10px;"><h3 class="text-center text-white mt-3">加入 官方帳號</h3></li>
+                  <br><br><br>
+                  <li class="list-group-item list-top" id="list-3" style="background-color: #89B9AD; height:100px; border-radius: 10px;"><h3 class="text-center text-white mt-3">閱讀登山雜誌</h3></li>
+                </ul>
+              </div>
+              <div class="box col-4" id ="animatedBox"><img src="./img/gift/mountain_drop_down.png" class="img-cover" alt=""></div>
             </div>
           </div>
 
           <!-- 製作翻牌效果 -->
           <h2 class="text-center">消費輕鬆賺</h2>
-          <ul class="d-flex align-content-between justify-content-between m-5">
-            <li class="" style="display:inline">
-              <div><p>STEP 1</p>
-                <h5>首次綁定</h5>
+          <ul class="d-flex align-content-between justify-content-between m-5 ps-0">
+            <li class="box-flip" id="box-flip-1" style="display:inline">
+              <div class="text-center"><p class="text-white">STEP 1</p>
+                <h5 class="text-white">首次綁定</h5>
               </div>
               <div>
-                <h5>OPEN POINT 會員</h5>
+                <h5 class="text-white text-center">OPEN POINT 會員</h5>
               </div>
           </li>
-            <li class="" style="display:inline">
-              <div><p>STEP 1</p>
-                <h5>首次綁定</h5>
+
+            <li class="box-flip" id="box-flip-2" style="display:inline">
+              <div class="text-center"><p class="text-white">STEP 1</p>
+                <h5 class="text-white text-center">首次綁定</h5>
               </div>
               <div>
-                <h5>OPEN POINT 會員</h5>
+                <h5 class="text-white text-center">OPEN POINT 會員</h5>
               </div>
             </li>
-            <li class="" style="display:inline">
-              <div><p>STEP 1</p>
-                <h5>首次綁定</h5>
+            <li class="box-flip" id="box-flip-3" style="display:inline">
+              <div class="text-center">
+                <p class="text-white">STEP 1</p>
+                <h5 class="text-white text-center">首次綁定</h5>
               </div>
               <div>
-                <h5>OPEN POINT 會員</h5>
+                <h5 class="text-white text-center">OPEN POINT 會員</h5>
               </div></li>
-            <li class="" style="display:inline"><div>
-              <p>STEP 1</p>
-              <h5>首次綁定</h5>
+            <li class="box-flip" id="box-flip-4" style="display:inline">
+              <div class="text-center">
+                <p class="text-white">STEP 1</p>
+                <h5 class="text-white">首次綁定</h5>
             </div>
             <div>
-              <h5>OPEN POINT 會員</h5>
+              <h5 class="text-white text-center">OPEN POINT 會員</h5>
             </div></li>
           </ul>
     </section>
@@ -179,11 +222,16 @@
     <script>
       document.addEventListener("DOMContentLoaded", function() {
         window.addEventListener("scroll", function() {
+          
+
+
+          // ----- 製作 山岳 的進場動畫 -----
+          // 取得山岳的 DOM
           var animatedBox = document.getElementById("animatedBox");
           var scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
 
           console.log(scrollPosition);
-          if(scrollPosition > 250) {
+          if(scrollPosition > 600) {
             // animatedBox.style.position = "fixed";
             animatedBox.style.right = "0px";
             animatedBox.style.opacity = "1";
@@ -192,8 +240,88 @@
             animatedBox.style.right = "-200px";
             animatedBox.style.opacity = "0";
           }
+
+          // ----- 製作 牌組 的進場動畫 -----
+          // 取得牌組的 DOM
+          var boxBox_1 = document.getElementById("box-flip-1");
+          var boxBox_2 = document.getElementById("box-flip-2");
+          var boxBox_3 = document.getElementById("box-flip-3");
+          var boxBox_4 = document.getElementById("box-flip-4");
+
+          if(scrollPosition > 850) {
+            boxBox_1.style.opacity = "1";
+            // boxBox_1.style.transform = "rotatey(360deg)";
+            boxBox_1.style.transition = "all 1s"
+            // boxBox_1.style.transition = "transform 1.5s ease-in-out"; 
+          }else {
+            boxBox_1.style.opacity = "0";
+          }
+
+          if(scrollPosition > 900) {
+            boxBox_2.style.opacity = "1";
+            // boxBox_1.style.transform = "rotatey(360deg)";
+            boxBox_2.style.transition = "all 1s"
+            // boxBox_1.style.transition = "transform 1.5s ease-in-out"; 
+          }else {
+            boxBox_2.style.opacity = "0";
+          }
+
+          if(scrollPosition > 950) {
+            boxBox_3.style.opacity = "1";
+            // boxBox_1.style.transform = "rotatey(360deg)";
+            boxBox_3.style.transition = "all 1s"
+            // boxBox_1.style.transition = "transform 1.5s ease-in-out"; 
+          }else {
+            boxBox_3.style.opacity = "0";
+          }
+
+          if(scrollPosition > 1000) {
+            boxBox_4.style.opacity = "1";
+            // boxBox_1.style.transform = "rotatey(360deg)";
+            boxBox_4.style.transition = "all 1s"
+            // boxBox_1.style.transition = "transform 1.5s ease-in-out"; 
+          }else {
+            boxBox_4.style.opacity = "0";
+          }
+
+          // ----- 製作 list 的進場動畫 -----
+          // 取得 list DOM
+          var animatedList_1 = document.getElementById("list-1");
+          var animatedList_2 = document.getElementById("list-2");
+          var animatedList_3 = document.getElementById("list-3");
+
+          if (scrollPosition > 600) {
+            animatedList_1.style.left = "0px";
+            animatedList_1.style.opacity = "1";
+            animatedList_1.style.transition = "all 1s";
+          } else {
+            animatedList_1.style.left = "-200px";
+            animatedList_1.style.opacity = "0";
+          }
+
+          if (scrollPosition > 650) {
+            animatedList_2.style.left = "0px";
+            animatedList_2.style.opacity = "1";
+            animatedList_2.style.transition = "all 1s";
+          } else {
+            animatedList_2.style.left = "-200px";
+            animatedList_2.style.opacity = "0";
+          }
+
+          if (scrollPosition > 700) {
+            animatedList_3.style.left = "0px";
+            animatedList_3.style.opacity = "1";
+            animatedList_3.style.transition = "all 1s";
+          } else {
+            animatedList_3.style.left = "-200px";
+            animatedList_3.style.opacity = "0";
+          }
+
         })
       })
+
+
+      
     </script>
 </body>
 </html>
